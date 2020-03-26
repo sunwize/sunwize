@@ -1,5 +1,5 @@
 $theme-colors: (
-  primary: #ff261e
+  dark: #093450
 );
 
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
@@ -7,4 +7,4 @@ $theme-colors: (
 @import "../../node_modules/bootstrap/scss/variables";
 
 // Custom imports
-@import "buttons";
+

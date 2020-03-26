@@ -1,18 +1,18 @@
 .btn-group-vertical {
   border-radius: 30px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25);
 
   .btn {
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: none;
 
-    &:hover, &:focus {
+    &:hover, &:focus, &:active {
       color: #ff23b5;
       outline: none !important;
       box-shadow: none;
+      border: none;
     }
 
     &:first-child {
@@ -30,9 +30,5 @@
 
   .btn-light {
     background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(237, 237, 237) 100%);
-
-    &:hover {
-      background: linear-gradient(to right, rgb(238, 238, 238) 0%, rgb(225, 225, 225) 100%);
-    }
   }
 }
