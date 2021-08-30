@@ -44,6 +44,7 @@ export const ProjectCard = styled.div`
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   border-radius: 3px;
   transition: 150ms ease;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 3px 3px 20px rgba(104, 101, 101, 0.5);

@@ -1,6 +1,5 @@
 import {translate} from "../assets/js/utils.js";
 import {SectionTitle} from "../assets/js/StyledComponents.js";
-import Image from 'next/image';
 
 const technologies = [
     {
@@ -61,8 +60,8 @@ export default function Technologies() {
                 {technologies.map((technology, index) => (
                     <div onClick={() => window.open(technology.link)} key={index} className="flex flex-col justify-center shadow-light text-center cursor-pointer hover:underline rounded p-5" style={{width: 150, height: 150}}>
                         <div>
-                            <Image src={technology.icon} width={50} height={50} objectFit="cover" alt={technology.name} />
-                            <div className="mt-2">{technology.name}</div>
+                            <img src={technology.icon} style={{objectFit: 'cover', width: 50, height: 50}} alt={technology.name} className="mx-auto" />
+                            <div className="mt-3">{technology.name}</div>
                         </div>
                     </div>
                 ))}

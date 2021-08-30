@@ -6,7 +6,6 @@ import {
     SectionTitle
 } from "../assets/js/StyledComponents.js";
 import {translate} from "../assets/js/utils.js";
-import Image from 'next/image';
 import {AiFillQuestionCircle, AiFillGithub} from "react-icons/ai";
 import {BiGlobe} from "react-icons/bi";
 import {IoLogoGooglePlaystore} from "react-icons/io5";
@@ -169,7 +168,7 @@ export default function Projects() {
                 <GridContainer width={320} noPadding>
                     {projects.map((project, index) => (
                         <ProjectCard key={index}>
-                            <Image src={project.image} alt={project.title} width={350} height={200} objectFit="cover"/>
+                            <img src={project.image} alt={project.title} style={{objectFit: 'cover', width: '100%', height: 200}} />
                             <ProjectTitle>{project.title}</ProjectTitle>
 
                             <Hr />
