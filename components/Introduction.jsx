@@ -20,8 +20,8 @@ export default function Introduction() {
                 <div className="mt-5 opacity-50 text-xl leading-8 font-light tracking-wider">
                     {
                         translate([
-                            `Welcome to my Personal Portfolio, here you can find my major achievements as well as my areas of expertise. Feel free to explore it!`,
-                            `Bienvenue dans mon Portfolio personnel, vous trouverez ici mes réalisations majeures ainsi que mes domaines de compétences. Bonne visite !`
+                            `Welcome to my Portfolio. Here you can find my major achievements as well as my areas of expertise. Feel free to explore it!`,
+                            `Bienvenu dans mon Portfolio. Vous y trouverez mes réalisations majeures ainsi que mes domaines de compétences. Bonne visite !`
                         ])
                     }
                 </div>

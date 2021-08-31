@@ -1,19 +1,19 @@
 import {GridContainer, SectionTitle, Title} from "../assets/js/StyledComponents.js";
-import {getLanguage, translate} from "../assets/js/utils.js";
+import {translate} from "../assets/js/utils.js";
 import moment from "moment";
 
-const age = moment('1998-01-06').locale(getLanguage()).fromNow(true);
+const age = moment().diff(moment('1998-01-06'), 'years');
 
 export default function AboutMe() {
     return (
         <div>
-            <SectionTitle>{translate('About me|À propos de moi')}</SectionTitle>
+            <SectionTitle>{translate('About me|Profil')}</SectionTitle>
 
             <div className="mt-5 opacity-50 text-lg leading-8 font-light tracking-wider">
                 {
                     translate([
-                        'The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.',
-                        `Ingénieur en informatique de ${age} et développeur web full stack usant des dernières technologies. J'apprends et je m'adapte rapidement. Je mets un point d'honneur sur la rigueur et la qualité apportées à mes productions. J'aime le travail en équipe par dessus tout car l'apprentissage est un jeu collectif.`
+                        `${age} years old computer engineer and full stack web developer using the latest technologies. I learn and adapt quickly. I emphasize the rigor and the quality brought to my productions. I like teamwork above all because learning is a collective game.`,
+                        `Ingénieur en informatique de ${age} ans et développeur web full stack usant des dernières technologies. J'apprends et je m'adapte rapidement. Je mets un point d'honneur sur la rigueur et la qualité apportées à mes productions. J'aime le travail en équipe par dessus tout car l'apprentissage est un jeu collectif.`
                     ])
                 }
             </div>

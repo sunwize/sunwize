@@ -39,7 +39,7 @@ export default function Header() {
                     <div className="flex-1 flex items-center justify-center text-xl font-light gap-x-20 tracking-wide opacity-80">
                         <div onClick={() => scroll('projects')} className="hover:underline cursor-pointer">{translate('Projects|Projets')}</div>
                         <div onClick={() => scroll('technologies')} className="hover:underline cursor-pointer">{translate('Technologies|Technologies')}</div>
-                        <div onClick={() => scroll('about-me')} className="hover:underline cursor-pointer">{translate('About|À Propos')}</div>
+                        <div onClick={() => scroll('about-me')} className="hover:underline cursor-pointer">{translate('About|Profil')}</div>
                     </div>
                 )
             }
