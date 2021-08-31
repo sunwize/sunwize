@@ -1,12 +1,11 @@
 import Head from 'next/head';
-import Header from "../components/Header.js";
-import Introduction from "../components/Introduction.js";
-import Projects from "../components/Projects.js";
+import Header from "../components/Header.jsx";
+import Introduction from "../components/Introduction.jsx";
+import Projects from "../components/Projects.jsx";
 import {SectionDivider} from "../assets/js/StyledComponents.js";
-import Technologies from "../components/Technologies.js";
-import AboutMe from "../components/AboutMe.js";
-import Footer from "../components/Footer.js";
-import {useEffect} from "react";
+import Technologies from "../components/Technologies.jsx";
+import AboutMe from "../components/AboutMe.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function Home() {
     return (

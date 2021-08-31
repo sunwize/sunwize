@@ -1,6 +1,6 @@
 import {translate} from "../assets/js/utils.js";
 import {SectionTitle} from "../assets/js/StyledComponents.js";
-import AnimatedBackground from "./AnimatedBackground.js";
+import AnimatedBackground from "./AnimatedBackground.jsx";
 import {useEffect, useState} from "react";
 
 export default function Introduction() {
