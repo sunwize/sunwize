@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Header from "../components/Header.js";
 import Introduction from "../components/Introduction.js";
 import Projects from "../components/Projects.js";
@@ -8,12 +9,13 @@ import Footer from "../components/Footer.js";
 import {useEffect} from "react";
 
 export default function Home() {
-    useEffect(() => {
-        document.title = 'Colin Clisson';
-    }, []);
-
     return (
         <div className="lg:w-3/5 container lg:mx-auto p-5 lg:px-0 pb-20">
+            <Head>
+                <title>Colin Clisson</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+
             <Header/>
 
             <div className="mt-10 lg:mt-32">
