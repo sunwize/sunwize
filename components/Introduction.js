@@ -4,8 +4,6 @@ import moment from "moment";
 import AnimatedBackground from "./AnimatedBackground.js";
 import {useEffect, useState} from "react";
 
-const age = moment('1998-01-06').locale(getLanguage()).fromNow(true);
-
 export default function Introduction() {
     const [isLargeLayout, setIsLargeLayout] = useState(false);
 
