@@ -1,6 +1,5 @@
-import {getLanguage, translate} from "../assets/js/utils.js";
+import {translate} from "../assets/js/utils.js";
 import {SectionTitle} from "../assets/js/StyledComponents.js";
-import moment from "moment";
 import AnimatedBackground from "./AnimatedBackground.js";
 import {useEffect, useState} from "react";
 
@@ -15,11 +14,16 @@ export default function Introduction() {
         <div className="flex items-center">
             <div className="lg:w-3/4">
                 <SectionTitle main>
-                    <div>Colin Clisson</div>
+                    <span>Colin Clisson</span>
                 </SectionTitle>
 
                 <div className="mt-5 opacity-50 text-xl leading-8 font-light tracking-wider">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    {
+                        translate([
+                            `Welcome to my Personal Portfolio, here you can find my major achievements as well as my areas of expertise. Feel free to explore it!`,
+                            `Bienvenue dans mon Portfolio personnel, vous trouverez ici mes réalisations majeures ainsi que mes domaines de compétences. Bonne visite !`
+                        ])
+                    }
                 </div>
 
                 <div className="mt-8">

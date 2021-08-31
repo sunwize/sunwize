@@ -46,11 +46,13 @@ export const ProjectCard = styled.div`
   transition: 150ms ease;
   overflow: hidden;
 
-  &:hover {
-    box-shadow: 3px 3px 20px rgba(104, 101, 101, 0.5);
+  @media (min-width: 768px) {
+    &:hover {
+      box-shadow: 3px 3px 20px rgba(104, 101, 101, 0.5);
 
-    img {
-      transform: scale(1.05);
+      img {
+        transform: scale(1.03);
+      }
     }
   }
 
@@ -68,6 +70,8 @@ export const ProjectTitle = styled.h3`
   color: #9cc9e3;
   padding: .5rem .8rem 0 .8rem;
   font-size: 2rem;
+  z-index: 0;
+  background: #0f1525;
 `
 
 export const ProjectDescription = styled.p`
