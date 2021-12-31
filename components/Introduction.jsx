@@ -21,7 +21,7 @@ export default function Introduction() {
                     {
                         translate([
                             `Welcome to my Portfolio. Here you can find my major achievements as well as my areas of expertise. Feel free to explore it!`,
-                            `Bienvenu dans mon Portfolio. Vous y trouverez mes réalisations majeures ainsi que mes domaines de compétences. Bonne visite !`
+                            `Bienvenue dans mon Portfolio. Vous y trouverez mes réalisations majeures ainsi que mes domaines de compétences. Bonne visite !`
                         ])
                     }
                 </div>
