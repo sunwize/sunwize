@@ -5,6 +5,7 @@
 
         <article class="z-[1] w-full text-center">
             <NuxtImg
+                provider="cloudinary"
                 src="/avatar.jpg"
                 alt="avatar"
                 width="100"

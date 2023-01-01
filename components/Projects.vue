@@ -34,6 +34,7 @@
                     :delay="100"
                 >
                     <NuxtImg
+                        provider="cloudinary"
                         :src="project.image"
                         :alt="project.name"
                         class="absolute top-2 left-1/2 -translate-x-1/2 object-cover"
@@ -42,6 +43,7 @@
                         :draggable="false"
                     />
                     <NuxtImg
+                        provider="cloudinary"
                         src="/screen.png"
                         alt="Screen"
                         width="250"

@@ -27,12 +27,13 @@
                 :delay="index * 100"
             >
                 <NuxtImg
+                    provider="cloudinary"
                     :src="skill.image"
                     :alt="skill.title"
                     class="min-w-[80%] max-w-[80%] aspect-square object-contain"
                     width="100"
                     height="100"
-                    fit="contain"
+                    fit="inside"
                     background="transparent"
                 />
                 <p class="text-xs opacity-50 tracking-wide">

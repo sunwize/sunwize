@@ -39,4 +39,9 @@ export default defineNuxtConfig({
     nitro: {
         compressPublicAssets: true,
     },
+    image: {
+        cloudinary: {
+            baseURL: "https://res.cloudinary.com/dh0ymuppr/image/upload/v1672608952/portfolio",
+        },
+    },
 });

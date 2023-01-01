@@ -19,9 +19,10 @@
                     <div class="flex items-center justify-center mx-auto">
                         <NuxtImg
                             v-motion
+                            provider="cloudinary"
                             :src="experience.image"
                             :alt="experience.company"
-                            fit="contain"
+                            fit="inside"
                             width="200"
                             height="100"
                             background="transparent"
@@ -54,6 +55,7 @@
                             :title="getStack(key).title"
                         >
                             <NuxtImg
+                                provider="cloudinary"
                                 :src="getStack(key).image"
                                 :alt="getStack(key).title"
                                 width="25"
