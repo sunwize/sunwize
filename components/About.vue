@@ -8,7 +8,7 @@
         </h1>
         <div
             ref="content"
-            class="max-w-[650px] w-full mx-auto text-sm sm:text-base leading-6 sm:leading-8 flex flex-col gap-3 flex-1 overflow-y-auto py-16 px-3"
+            class="max-w-[650px] w-full mx-auto text-sm md:text-base leading-6 sm:leading-8 flex flex-col gap-3 flex-1 overflow-y-auto py-16 px-3"
         />
     </section>
 </template>
