@@ -1,3 +1,22 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:nuxt/recommended",
+    "plugin:vue/vue3-recommended"
+  ],
+  "root": true,
+  "rules": {
+    "comma-dangle": ["error", "always-multiline"],
+    "no-trailing-spaces": ["error"],
+    "object-curly-spacing": ["error", "always"],
+    "quotes": ["error", "double"],
+    "quote-props": ["error", "consistent-as-needed"],
+    "semi": ["error", "always"],
+    "vue/html-indent": ["error", 4],
+    "vue/multi-word-component-names": 0
+  }
 }
