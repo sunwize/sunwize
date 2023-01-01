@@ -8,7 +8,7 @@
         </h1>
         <div
             ref="content"
-            class="max-w-[650px] w-full mx-auto text-sm md:text-base leading-6 sm:leading-8 flex flex-col gap-3 flex-1 overflow-y-auto py-16 px-3"
+            class="max-w-[650px] w-full mx-auto text-sm sm:text-base leading-6 sm:leading-8 flex flex-col gap-3 flex-1 overflow-y-auto py-16 px-3"
         />
     </section>
 </template>
@@ -39,7 +39,7 @@ useTypingParagraph(content, [
     `,
     `
         If you are looking for a dedicated and ambitious front-end developer, you have come to the right place.
-        I look forward to the opportunity to work with you and create something amazing together! 🤩
+        I look forward to the opportunity to work with you and create something amazing together! 🚀
     `,
 ], {
     delayBetweenLetters: 30,
