@@ -9,6 +9,7 @@
                 <a
                     :href="link.href"
                     target="_blank"
+                    rel="noreferrer"
                     :aria-label="link.icon"
                 >
                     <mdicon :name="link.icon" />

@@ -55,6 +55,7 @@
                 <a
                     :href="project.link"
                     target="_blank"
+                    rel="noreferrer"
                     :aria-label="project.name"
                     class="flex items-center gap-1 hover:underline mb-5"
                 >
