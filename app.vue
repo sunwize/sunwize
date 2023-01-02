@@ -54,6 +54,24 @@ function generateSocialMeta({ title, description, image, url }) {
     ];
 }
 
+function generateGoogleAnalytics() {
+    return [
+        {
+            async: true,
+            src: "https://www.googletagmanager.com/gtag/js?id=G-MLHG2G84NB",
+        },
+        {
+            innerHTML: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-MLHG2G84NB');
+            `,
+        },
+    ];
+}
+
 useHead({
     title: "Colin Clisson",
     htmlAttrs: {
@@ -102,6 +120,7 @@ useHead({
             }),
             type: "application/ld+json",
         },
+        ...generateGoogleAnalytics(),
     ],
 });
 </script>
