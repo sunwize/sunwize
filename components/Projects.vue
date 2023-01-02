@@ -97,19 +97,25 @@ export default {
 const projects = ref([
     {
         name: "PAPER Education",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero semper, ullamcorper leo nec, suscipit enim. Vestibulum tincidunt mauris velit, non condimentum urna rhoncus sit amet. Nullam congue tincidunt erat, sit amet viverra leo tempor in. Nulla ante augue, lobortis et sodales vel, bibendum sit amet ante.",
+        description: `
+            Educative platform to provide unlimited access to trained tutors so students can ask questions, work through problems and get their writings reviewed 24/7.
+        `,
         image: "/projects/paper.png",
         link: "https://paper.co",
     },
     {
         name: "The Food Force",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta, urna vitae commodo tempus, mauris nibh dapibus turpis, a ultricies metus tortor ut quam. Sed et libero semper, ullamcorper leo nec, suscipit enim. Vestibulum tincidunt mauris velit, non condimentum urna rhoncus sit amet. Nullam congue tincidunt erat, sit amet viverra leo tempor in. Nulla ante augue, lobortis et sodales vel, bibendum sit amet ante.",
+        description: `
+            A place to share what meals, snacks, desserts and refreshments you liked and from where, so that others can also Discover them.
+        `,
         image: "/projects/thefoodforce.png",
         link: "https://thefoodforce.com",
     },
     {
         name: "Confetti",
-        description: "Praesent porta, urna vitae commodo tempus, mauris nibh dapibus turpis, a ultricies metus tortor ut quam. Sed et libero semper, ullamcorper leo nec, suscipit enim. Vestibulum tincidunt mauris velit, non condimentum urna rhoncus sit amet. Nullam congue tincidunt erat, sit amet viverra leo tempor in. Nulla ante augue, lobortis et sodales vel, bibendum sit amet ante.",
+        description: `
+            A loyalty program for Place Rosemère shopping mall. Clients get to scan their purchase receipts to collect confetti points and win amazing prizes.
+        `,
         image: "/projects/confetti.png",
         link: "https://confetti.placerosemere.com",
     },
