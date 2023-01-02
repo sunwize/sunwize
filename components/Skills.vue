@@ -51,8 +51,6 @@ export default {
 </script>
 
 <script setup>
-import useAsset from "~/composables/useAsset.js";
-
 const skills = ref([
     {
         key: "vuejs",

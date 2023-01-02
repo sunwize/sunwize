@@ -44,11 +44,9 @@ export default {
 
 <script setup>
 import { useTypingText } from "~/composables/useTypingText";
-import useAsset from "~/composables/useAsset.js";
 
 const emit = defineEmits(["scroll-to"]);
 
-const avatar = useAsset("img/avatar.jpg");
 const typing = ref();
 
 const sections = ref([
