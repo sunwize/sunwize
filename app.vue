@@ -73,7 +73,7 @@ function generateGoogleAnalytics() {
 }
 
 useHead({
-    title: "Colin Clisson",
+    title: "Colin Clisson - Front-End Developer",
     htmlAttrs: {
         lang: "en",
     },
@@ -81,7 +81,7 @@ useHead({
         {
             hid: "description",
             name: "description",
-            content: "As a front-end engineer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
+            content: "As a front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
         },
         {
             hid: "author",
@@ -101,7 +101,7 @@ useHead({
         // Social media
         ...generateSocialMeta({
             title: "Colin Clisson",
-            description: "As a front-end engineer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
+            description: "As a front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
             image: "https://res.cloudinary.com/dh0ymuppr/image/upload/v1672608952/portfolio/avatar.jpg",
             url: "https://colinclisson.com",
         }),

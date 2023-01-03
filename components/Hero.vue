@@ -18,8 +18,12 @@
                 Front-end Engineer
             </h1>
             <h2 class="font-bold text-3xl mb-5">
-                <span ref="typing" />
-                <span class="anchor">&nbsp;</span>
+                <span ref="typing">
+                    <span>Hi, my name is Colin.</span>
+                    <span>I'm a coffee lover.</span>
+                    <span>Let's build the web of tomorrow!</span>
+                </span>
+                <span>&nbsp;</span>
             </h2>
 
             <ul class="flex items-center justify-center gap-5 opacity-50 text-xs uppercase tracking-wide">
@@ -68,12 +72,7 @@ const sections = ref([
     },
 ]);
 
-useTypingText(typing, [
-    "Hi, my name is Colin.",
-    "I'm a coffee lover.",
-    "Here is my portfolio.",
-    "Feel free to explore it!",
-]);
+useTypingText(typing);
 </script>
 
 <style lang="scss" scoped>
@@ -133,14 +132,6 @@ useTypingText(typing, [
     max-width: 410px;
     max-height: 410px;
     animation: pulse-down 2s ease-in-out;
-}
-
-.anchor {
-    display: inline-block;
-    width: .25rem;
-    background: rgba(white, .4);
-    animation: anchor 1.2s ease-in-out infinite;
-    margin-left: .5rem;
 }
 
 .avatar {

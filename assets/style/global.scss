@@ -36,3 +36,15 @@ body {
     display: none;
   }
 }
+
+.caret {
+  border-right: 1px solid;
+  animation: caret 1s steps(1) infinite;
+  margin-left: .25rem;
+}
+
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
