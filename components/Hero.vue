@@ -15,13 +15,14 @@
                 :draggable="false"
             />
             <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
-                Front-end Engineer
+                Front-end Developer
             </h1>
-            <h2 class="font-bold text-3xl mb-5">
+            <h2 class="font-bold text-2xl sm:text-3xl mb-5">
                 <span ref="typing">
-                    <span>Hi, my name is Colin.</span>
-                    <span>I'm a coffee lover.</span>
-                    <span>Let's build the web of tomorrow!</span>
+                    <span>Code is a form of art ✨</span>
+                    <span>Code smarter, not harder 🧠</span>
+                    <span>AI is the future 🤖</span>
+                    <span>Coffee is my fuel ☕</span>
                 </span>
                 <span>&nbsp;</span>
             </h2>
