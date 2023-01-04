@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    ssr: false,
     head: {
         link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
     },
