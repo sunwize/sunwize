@@ -81,7 +81,7 @@ useHead({
         {
             hid: "description",
             name: "description",
-            content: "As a front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
+            content: "As a Front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
         },
         {
             hid: "author",
