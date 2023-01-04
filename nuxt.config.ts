@@ -13,14 +13,7 @@ export default defineNuxtConfig({
         "@nuxt/image-edge",
     ],
     build: {
-        postcss: {
-            postcssOptions: {
-                plugins: {
-                    tailwindcss: {},
-                    autoprefixer: {},
-                },
-            },
-        },
+        postcss: require("./postcss.config.js"),
         transpile: ["mdi-vue"],
     },
     googleFonts: {
