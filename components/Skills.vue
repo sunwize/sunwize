@@ -3,9 +3,9 @@
         id="skills"
         class="h-screen flex flex-col pt-16"
     >
-        <h1 class="text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="text-center uppercase opacity-50 tracking-[10px]">
             Skills
-        </h1>
+        </h2>
         <ul class="max-w-[650px] mx-auto grid grid-cols-3 md:grid-cols-4 justify-items-center gap-5 pt-16 md:pt-28">
             <li
                 v-for="(skill, index) in skills"

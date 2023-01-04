@@ -3,9 +3,9 @@
         id="experience"
         class="h-screen relative flex flex-col pt-16"
     >
-        <h1 class="text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="text-center uppercase opacity-50 tracking-[10px]">
             Experience
-        </h1>
+        </h2>
         <ul
             ref="scrollContainer"
             class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory md:px-10 py-16"

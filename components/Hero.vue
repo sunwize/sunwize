@@ -17,7 +17,7 @@
             <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
                 Front-end Developer
             </h1>
-            <h2 class="font-bold text-2xl sm:text-3xl mb-5">
+            <p class="font-bold text-2xl sm:text-3xl mb-5">
                 <span ref="typing">
                     <span>Code is a form of art ✨</span>
                     <span>Code smarter, not harder 🧠</span>
@@ -25,7 +25,7 @@
                     <span>Coffee is my fuel ☕</span>
                 </span>
                 <span>&nbsp;</span>
-            </h2>
+            </p>
 
             <ul class="flex items-center justify-center gap-5 opacity-50 text-xs uppercase tracking-wide">
                 <li

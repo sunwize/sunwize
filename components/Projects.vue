@@ -4,9 +4,9 @@
         class="relative h-screen flex flex-col pt-16"
     >
         <div class="w-full absolute top-[25%] bg-gray-700/20 left-0 h-[60%] -skew-y-[6deg]" />
-        <h1 class="z-[1] text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="z-[1] text-center uppercase opacity-50 tracking-[10px]">
             Projects
-        </h1>
+        </h2>
         <ul
             ref="scrollContainer"
             class="z-[1] scrollbar-hidden w-full overflow-x-auto flex flex-nowrap gap-28 sm:gap-0 snap-x snap-mandatory flex-1"
@@ -14,60 +14,62 @@
             <li
                 v-for="(project, index) in projects"
                 :key="index"
-                class="min-w-full snap-center flex flex-col items-center justify-center"
+                class="min-w-full snap-center"
             >
-                <div
-                    v-motion
-                    class="relative mb-8"
-                    :initial="{
-                        opacity: 0,
-                        y: -50
-                    }"
-                    :visible="{
-                        opacity: 1,
-                        y: 0,
-                        transition: {
-                            stiffness: 50,
-                            mass: 0.5
-                        }
-                    }"
-                    :delay="100"
-                >
-                    <NuxtImg
-                        provider="cloudinary"
-                        :src="project.image"
-                        :alt="project.name"
-                        class="absolute top-2 left-1/2 -translate-x-1/2 object-cover"
-                        width="190"
-                        height="118"
-                        :draggable="false"
-                    />
-                    <NuxtImg
-                        provider="cloudinary"
-                        src="/screen.png"
-                        alt="Screen"
-                        width="250"
-                        height="144"
-                        class="z-[1] relative block"
-                        :draggable="false"
-                    />
-                </div>
-                <a
-                    :href="project.link"
-                    target="_blank"
-                    rel="noreferrer"
-                    :aria-label="project.name"
-                    class="flex items-center gap-1 hover:underline mb-5"
-                >
-                    <h2 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h2>
-                    <mdicon
-                        name="open-in-new"
-                        class="opacity-50"
-                    />
-                </a>
-                <p class="w-full max-w-[650px] text-sm text-left px-3">
-                    {{ project.description }}
-                </p>
+                <article class="h-full flex flex-col items-center justify-center">
+                    <div
+                        v-motion
+                        class="relative mb-8"
+                        :initial="{
+                            opacity: 0,
+                            y: -50
+                        }"
+                        :visible="{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                stiffness: 50,
+                                mass: 0.5
+                            }
+                        }"
+                        :delay="100"
+                    >
+                        <NuxtImg
+                            provider="cloudinary"
+                            :src="project.image"
+                            :alt="project.name"
+                            class="absolute top-2 left-1/2 -translate-x-1/2 object-cover"
+                            width="190"
+                            height="118"
+                            :draggable="false"
+                        />
+                        <NuxtImg
+                            provider="cloudinary"
+                            src="/screen.png"
+                            alt="Screen"
+                            width="250"
+                            height="144"
+                            class="z-[1] relative block"
+                            :draggable="false"
+                        />
+                    </div>
+                    <a
+                        :href="project.link"
+                        target="_blank"
+                        rel="noreferrer"
+                        :aria-label="project.name"
+                        class="flex items-center gap-1 hover:underline mb-5"
+                    >
+                        <h1 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h1>
+                        <mdicon
+                            name="open-in-new"
+                            class="opacity-50"
+                        />
+                    </a>
+                    <p class="w-full max-w-[650px] text-sm text-left px-3">
+                        {{ project.description }}
+                    </p>
+                </article>
             </li>
         </ul>
 

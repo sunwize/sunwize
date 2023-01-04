@@ -3,9 +3,9 @@
         id="about"
         class="h-screen flex flex-col pt-16"
     >
-        <h1 class="text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="text-center uppercase opacity-50 tracking-[10px]">
             About
-        </h1>
+        </h2>
         <div
             ref="content"
             class="max-w-[650px] w-full mx-auto text-sm sm:text-base leading-6 sm:leading-8 flex flex-col gap-3 flex-1 overflow-y-auto py-16 px-3"
