@@ -58,6 +58,7 @@
                         target="_blank"
                         rel="noreferrer"
                         :aria-label="project.name"
+                        :title="project.name"
                         class="flex items-center gap-1 hover:underline mb-5"
                     >
                         <h3 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h3>

@@ -11,6 +11,7 @@
                     target="_blank"
                     rel="noreferrer"
                     :aria-label="link.icon"
+                    :title="link.title"
                 >
                     <mdicon :name="link.icon" />
                 </a>
@@ -28,14 +29,17 @@ export default {
 <script setup>
 const links = ref([
     {
+        title: "Github",
         icon: "github",
         href: "https://github.com/sunwize",
     },
     {
+        title: "LinkedIn",
         icon: "linkedin",
         href: "https://www.linkedin.com/in/colin-clisson-6b675b142",
     },
     {
+        title: "Email",
         icon: "at",
         href: "mailto:colinclissonhg@gmail.com",
     },
