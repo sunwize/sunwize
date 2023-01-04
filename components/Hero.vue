@@ -18,7 +18,10 @@
                 Front-end Developer
             </h1>
             <p class="font-bold text-2xl sm:text-3xl mb-5">
-                <span ref="typing">
+                <span
+                    v-show="loaded"
+                    ref="typing"
+                >
                     <span>Code is a form of art ✨</span>
                     <span>Code smarter, not harder 🧠</span>
                     <span>AI is the future 🤖</span>
@@ -73,7 +76,7 @@ const sections = ref([
     },
 ]);
 
-useTypingText(typing);
+const { loaded } = useTypingText(typing);
 </script>
 
 <style lang="scss" scoped>

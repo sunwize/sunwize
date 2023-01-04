@@ -2,6 +2,7 @@ export function useTypingText(element, options = {
     delayBetweenLetters: 50,
     delayBetweenSentences: 1500,
 }) {
+    const loaded = ref(false);
     const sentenceIndex = ref(0);
     const letterIndex = ref(0);
 
@@ -12,6 +13,7 @@ export function useTypingText(element, options = {
             sentences.push(child.textContent);
         });
         element.value.innerHTML = "";
+        loaded.value = true;
     }
 
     function typeText() {
@@ -40,4 +42,8 @@ export function useTypingText(element, options = {
         init();
         typeText();
     });
+
+    return {
+        loaded,
+    };
 }
