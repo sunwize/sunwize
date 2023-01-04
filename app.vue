@@ -120,7 +120,6 @@ useHead({
             }),
             type: "application/ld+json",
         },
-        ...generateGoogleAnalytics(),
     ],
 });
 </script>
