@@ -42,12 +42,12 @@
                             :delay="100"
                         />
                     </div>
-                    <h1 class="text-xl">
+                    <h3 class="text-xl">
                         {{ experience.title }}
-                    </h1>
-                    <h2 class="text-sm font-bold mb-3">
+                    </h3>
+                    <h4 class="text-sm font-bold mb-3">
                         {{ experience.company }}
-                    </h2>
+                    </h4>
                     <ul class="flex items-center gap-3 mb-8">
                         <li
                             v-for="(key, i) in experience.stack"

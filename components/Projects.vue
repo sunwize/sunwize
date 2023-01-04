@@ -60,7 +60,7 @@
                         :aria-label="project.name"
                         class="flex items-center gap-1 hover:underline mb-5"
                     >
-                        <h1 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h1>
+                        <h3 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h3>
                         <mdicon
                             name="open-in-new"
                             class="opacity-50"

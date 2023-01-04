@@ -22,7 +22,7 @@
                     v-show="loaded"
                     ref="typing"
                 >
-                    <span>Code is a form of art ✨</span>
+                    <span>Code is poetry ✨</span>
                     <span>Code smarter, not harder 🧠</span>
                     <span>AI is the future 🤖</span>
                     <span>Coffee is my fuel ☕</span>
