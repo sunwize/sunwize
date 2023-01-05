@@ -30,11 +30,11 @@
                 <span>&nbsp;</span>
             </p>
 
-            <ul class="flex items-center justify-center gap-5 opacity-50 text-xs uppercase tracking-wide">
+            <ul class="flex items-center justify-center gap-5 text-xs uppercase tracking-wide">
                 <li
                     v-for="(section, index) in sections"
                     :key="index"
-                    class="cursor-pointer hover:underline"
+                    class="cursor-pointer opacity-50 hover:underline hover:opacity-100"
                     @click.stop="emit('scroll-to', section.id)"
                 >
                     {{ section.name }}
