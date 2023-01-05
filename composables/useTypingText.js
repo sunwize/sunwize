@@ -1,7 +1,7 @@
-export function useTypingText(element, options = {
-    delayBetweenLetters: 50,
-    delayBetweenSentences: 1500,
-}) {
+export function useTypingText(element, options = {}) {
+    const delayBetweenLetters = options.delayBetweenLetters ?? 50;
+    const delayBetweenSentences = options.delayBetweenSentences ?? 1500;
+
     const loaded = ref(false);
     const sentenceIndex = ref(0);
     const letterIndex = ref(0);
@@ -20,9 +20,9 @@ export function useTypingText(element, options = {
         if (letterIndex.value <= sentences[sentenceIndex.value].length) {
             element.value.innerHTML = sentences[sentenceIndex.value].slice(0, letterIndex.value) + "<span aria-hidden='true' class='caret'></span>";
             letterIndex.value++;
-            setTimeout(typeText, options.delayBetweenLetters);
+            setTimeout(typeText, delayBetweenLetters);
         } else {
-            setTimeout(removeText, options.delayBetweenSentences);
+            setTimeout(removeText, delayBetweenSentences);
         }
     }
 
@@ -31,7 +31,7 @@ export function useTypingText(element, options = {
             element.value.innerHTML = element.value.textContent.slice(0, letterIndex.value - 1) + "<span aria-hidden='true' class='caret'></span>";
             letterIndex.value--;
 
-            setTimeout(removeText, options.delayBetweenLetters);
+            setTimeout(removeText, delayBetweenLetters);
         } else {
             sentenceIndex.value = (sentenceIndex.value + 1) % sentences.length;
             typeText();

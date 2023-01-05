@@ -1,6 +1,6 @@
 <template>
-    <nav class="fixed z-10 top-0 left-0 w-full">
-        <ul class="max-w-[650px] mx-auto bg-background flex items-center gap-5 p-3">
+    <nav class="fixed z-10 top-0 left-0 w-full bg-background">
+        <ul class="max-w-[650px] mx-auto flex items-center gap-5 p-3">
             <li
                 v-for="(link, index) in links"
                 :key="index"
