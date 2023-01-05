@@ -66,11 +66,10 @@
                     <p class="text-sm font-light uppercase opacity-50 tracking-wide mb-3">
                         {{ format(experience.date_start, "LLL yyyy") }} - {{ format(experience.date_end, "LLL yyyy") }}
                     </p>
-                    <ul class="list-disc text-xs sm:text-sm flex flex-col gap-2 pl-3 md:pl-0">
-                        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et libero semper, ullamcorper leo nec, suscipit enim. Vestibulum tincidunt mauris velit, non condimentum urna rhoncus sit amet.</li>
-                        <li>In sapien sem, bibendum sed risus sagittis, tincidunt dictum nisl. Morbi finibus hendrerit vehicula. Nunc et eros nec elit sollicitudin lacinia id a neque.</li>
-                        <li>Aliquam at nibh quam. Praesent ultrices sapien tristique nisl tristique congue. Maecenas magna lacus, tempor eget orci vel, venenatis eleifend risus.</li>
-                    </ul>
+                    <ul
+                        class="list-disc text-xs sm:text-sm flex flex-col gap-2 pl-3 md:pl-0"
+                        v-html="experience.description"
+                    />
                 </article>
             </li>
         </ul>
@@ -105,7 +104,12 @@ const experiences = ref([
     {
         image: "/experiences/paper.png",
         company: "Paper Education",
-        title: "Front-End Engineer",
+        title: "Front-End Developer",
+        description: `
+            <li>As a front-end developer, I participated in creating a tutoring platform that lets student ask professional tutors to review their writings 24/7.</li>
+            <li>Developed a Chrome extension to extend the use of the platform to a simple browser plugin.</li>
+            <li>Worked on a game where students can create a city by resolving math problems.</li>
+        `,
         stack: ["vuejs", "javascript", "postgresql"],
         date_start: new Date("01/04/2022"),
         date_end: new Date(),
@@ -114,6 +118,11 @@ const experiences = ref([
         image: "/experiences/eyeinmedia.png",
         company: "Eyein Media",
         title: "Software Engineer",
+        description: `
+            <li>Worked on both the front-end and the backend of an ecosystem for restaurants, combining a food ordering app (web and mobile), a personalized website for menu display, and a system for managing orders and reserving tables.</li>
+            <li>As a full-stack developer, made a web/mobile application that allows people to avoid waiting in line at stores during the first lockdown.</li>
+            <li>Developed a web/mobile application providing a system for scheduling appointments between people isolated in long-term care homes and their families.</li>
+        `,
         stack: ["vuejs", "javascript", "capacitor", "mongodb"],
         date_start: new Date("01/03/2020"),
         date_end: new Date("01/03/2022"),
