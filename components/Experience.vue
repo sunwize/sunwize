@@ -58,6 +58,7 @@
                                 provider="cloudinary"
                                 :src="getStack(key).image"
                                 :alt="getStack(key).title"
+                                fit="inside"
                                 width="25"
                                 height="25"
                             />
@@ -104,9 +105,9 @@ const experiences = ref([
     {
         image: "/experiences/paper.png",
         company: "Paper Education",
-        title: "Front-End Developer",
+        title: "Front End Developer",
         description: `
-            <li>As a front-end developer, I participated in creating a tutoring platform that lets student ask professional tutors to review their writings 24/7.</li>
+            <li>As a front end developer, I participated in creating a tutoring platform that lets student ask professional tutors to review their writings 24/7.</li>
             <li>Developed a Chrome extension to extend the use of the platform to a simple browser plugin.</li>
             <li>Worked on a game where students can create a city by resolving math problems.</li>
         `,
@@ -119,11 +120,11 @@ const experiences = ref([
         company: "Eyein Media",
         title: "Software Engineer",
         description: `
-            <li>Worked on both the front-end and the backend of an ecosystem for restaurants, combining a food ordering app (web and mobile), a personalized website for menu display, and a system for managing orders and reserving tables.</li>
+            <li>Worked on both the front end and the backend of an ecosystem for restaurants, combining a food ordering app (web and mobile), a personalized website for menu display, and a system for managing orders and reserving tables.</li>
             <li>As a full-stack developer, made a web/mobile application that allows people to avoid waiting in line at stores during the first lockdown.</li>
             <li>Developed a web/mobile application providing a system for scheduling appointments between people isolated in long-term care homes and their families.</li>
         `,
-        stack: ["vuejs", "javascript", "capacitor", "mongodb"],
+        stack: ["vuejs", "nuxtjs", "javascript", "capacitor", "mongodb"],
         date_start: new Date("01/03/2020"),
         date_end: new Date("01/03/2022"),
     },
@@ -139,6 +140,11 @@ const stack = ref([
         key: "vuejs",
         image: "/stack/vuejs.png",
         title: "Vue.js",
+    },
+    {
+        key: "nuxtjs",
+        image: "/stack/nuxtjs.png",
+        title: "Nuxt.js",
     },
     {
         key: "javascript",

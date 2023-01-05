@@ -15,7 +15,7 @@
                 :draggable="false"
             />
             <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
-                Front-end Developer
+                Front end Developer
             </h1>
             <p class="font-bold text-2xl sm:text-3xl mb-5">
                 <span

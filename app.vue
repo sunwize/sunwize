@@ -3,8 +3,13 @@
 </template>
 
 <script setup>
-function generateSocialMeta({ title, description, image, url }) {
+function generateMeta({ title, description, image, url }) {
     return [
+        {
+            hid: "description",
+            name: "description",
+            content: description,
+        },
         {
             hid: "og:title",
             property: "og:title",
@@ -54,35 +59,12 @@ function generateSocialMeta({ title, description, image, url }) {
     ];
 }
 
-function generateGoogleAnalytics() {
-    return [
-        {
-            async: true,
-            src: "https://www.googletagmanager.com/gtag/js?id=G-MLHG2G84NB",
-        },
-        {
-            innerHTML: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-MLHG2G84NB');
-            `,
-        },
-    ];
-}
-
 useHead({
-    title: "Colin Clisson - Front-End Developer",
+    title: "Colin Clisson | Front End Developer",
     htmlAttrs: {
         lang: "en",
     },
     meta: [
-        {
-            hid: "description",
-            name: "description",
-            content: "As a Front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
-        },
         {
             hid: "author",
             name: "author",
@@ -91,7 +73,7 @@ useHead({
         {
             hid: "keywords",
             name: "keywords",
-            content: "Web, Developer, Development, Engineer, Application, Software",
+            content: "Front end, Web, Developer, Engineer, Vue, Nuxt, React",
         },
         {
             hid: "viewport",
@@ -99,9 +81,9 @@ useHead({
             content: "width=device-width, initial-scale=1.0",
         },
         // Social media
-        ...generateSocialMeta({
-            title: "Colin Clisson",
-            description: "As a front-end developer, I specialize in creating interactive and user-friendly web applications using HTML, CSS, and JavaScript. Take a look at my recent projects to learn more about my skills and experience.",
+        ...generateMeta({
+            title: "Colin Clisson | Front End Developer",
+            description: "As a front end developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
             image: "https://res.cloudinary.com/dh0ymuppr/image/upload/v1672608952/portfolio/avatar.jpg",
             url: "https://colinclisson.com",
         }),
@@ -116,7 +98,7 @@ useHead({
                     "@type": "Person",
                     "name": "Colin Clisson",
                 },
-                "description": "Front-end developer who builds complex web application",
+                "description": "As a front end developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
             }),
             type: "application/ld+json",
         },
