@@ -42,7 +42,7 @@ import useTypingParagraph from "~/composables/useTypingParagraph.js";
 const content = ref();
 
 useTypingParagraph(content, {
-    delayBetweenLetters: 20,
+    delayBetweenLetters: 10,
 });
 </script>
 

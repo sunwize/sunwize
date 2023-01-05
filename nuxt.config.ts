@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         "@nuxt/image-edge",
     ],
     build: {
+        // @ts-ignore
         postcss: require("./postcss.config.js"),
         transpile: ["mdi-vue"],
     },
