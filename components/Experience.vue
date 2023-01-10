@@ -13,7 +13,7 @@
             <li
                 v-for="(experience, index) in experiences"
                 :key="index"
-                class="flex-1 min-w-full h-full snap-center overflow-y-auto"
+                class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto"
             >
                 <article class="md:w-[650px] h-full mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
                     <div class="flex items-center justify-center mx-auto">

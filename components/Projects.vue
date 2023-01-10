@@ -14,7 +14,7 @@
             <li
                 v-for="(project, index) in projects"
                 :key="index"
-                class="min-w-full snap-center"
+                class="min-w-full snap-center snap-always"
             >
                 <article class="h-full flex flex-col items-center justify-center">
                     <div

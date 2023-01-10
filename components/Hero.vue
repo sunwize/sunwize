@@ -8,11 +8,10 @@
                 provider="cloudinary"
                 src="/avatar.jpg"
                 alt="avatar"
-                width="100"
-                height="100"
                 quality="100"
                 class="avatar block mx-auto rounded-full mb-4"
                 :draggable="false"
+                sizes="sm:100px lg:150px"
             />
             <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
                 Front end Developer
@@ -125,16 +124,16 @@ const { loaded } = useTypingText(typing);
 .small-circle {
     width: calc(100vw - 30px);
     height: calc(100vw - 30px);
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 500px;
+    max-height: 500px;
     animation: pulse 2s ease-in-out;
 }
 
 .big-circle {
     width: calc(100vw - 20px);
     height: calc(100vw - 20px);
-    max-width: 410px;
-    max-height: 410px;
+    max-width: 510px;
+    max-height: 510px;
     animation: pulse-down 2s ease-in-out;
 }
 
