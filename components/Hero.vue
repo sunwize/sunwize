@@ -4,15 +4,18 @@
         <div class="big-circle border-2 border-gray-700 rounded-full" />
 
         <article class="z-[1] w-full text-center">
-            <NuxtImg
-                provider="cloudinary"
-                src="/avatar.jpg"
-                alt="avatar"
-                quality="100"
-                class="avatar block mx-auto rounded-full mb-4"
-                :draggable="false"
-                sizes="sm:100px lg:150px"
-            />
+            <figure class="w-[100px] sm:w-[150px] mx-auto avatar mb-4">
+                <NuxtImg
+                    provider="cloudinary"
+                    src="/avatar.jpg"
+                    alt="avatar"
+                    quality="100"
+                    class="rounded-full"
+                    :draggable="false"
+                    width="150"
+                    height="150"
+                />
+            </figure>
             <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
                 Front end Developer
             </h1>
