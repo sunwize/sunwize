@@ -1,5 +1,8 @@
 <template>
-    <nav class="fixed z-10 top-0 left-0 w-full bg-background">
+    <nav
+        class="fixed z-10 top-0 left-0 w-full"
+        :class="classList"
+    >
         <ul class="max-w-[650px] mx-auto flex items-center gap-5 p-3">
             <li
                 v-for="(link, index) in links"
@@ -27,6 +30,8 @@ export default {
 </script>
 
 <script setup>
+import { useScroll } from "@vueuse/core";
+
 const links = ref([
     {
         title: "Github",
@@ -44,4 +49,19 @@ const links = ref([
         href: "mailto:colinclissonhg@gmail.com",
     },
 ]);
+const classList = ref("");
+
+onMounted(() => {
+    const { y } = useScroll(ref(document.querySelector("main")));
+
+    watch(y, (value) => {
+        classList.value = value > 200 ? "bg-background" : "";
+    });
+});
 </script>
+
+<style lang="scss" scoped>
+nav {
+    transition: background-color 150ms ease;
+}
+</style>

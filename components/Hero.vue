@@ -1,5 +1,6 @@
 <template>
     <section class="h-screen relative flex items-center justify-center overflow-x-hidden">
+        <BackgroundCanvas class="absolute top-0 left-0 w-full h-full" />
         <div class="small-circle border-2 border-gray-700 rounded-full" />
         <div class="big-circle border-2 border-gray-700 rounded-full" />
 
@@ -16,7 +17,7 @@
                     height="150"
                 />
             </figure>
-            <h1 class="uppercase tracking-[5px] opacity-50 text-xs mb-2">
+            <h1 class="uppercase tracking-[5px] opacity-70 text-xs mb-2">
                 Front end Developer
             </h1>
             <p class="font-bold text-2xl sm:text-3xl mb-5">
@@ -36,7 +37,7 @@
                 <li
                     v-for="(section, index) in sections"
                     :key="index"
-                    class="cursor-pointer opacity-50 hover:underline hover:opacity-100"
+                    class="cursor-pointer opacity-70 hover:underline hover:opacity-100"
                     @click.stop="emit('scroll-to', section.id)"
                 >
                     {{ section.name }}
