@@ -104,6 +104,7 @@ function start() {
         starBaseRadius = 2,
         shootingStarRadius = 3;
     let shootingStars = [];
+    let paused = false;
 
     //Create all stars
     for (let j = 0; j < layers.length; j += 1) {
@@ -118,6 +119,10 @@ function start() {
     }
 
     function createShootingStar() {
+        if (paused) {
+            return;
+        }
+
         const shootingStar = particle.create(randomRange(width / 2, width), randomRange(0, height / 2), 0, 0);
         shootingStar.setSpeed(randomRange(shootingStarSpeed.min, shootingStarSpeed.max));
         shootingStar.setHeading(degreesToRads(starsAngle));
@@ -245,6 +250,10 @@ function start() {
     setInterval(() => {
         createShootingStar();
     }, shootingStarEmittingInterval);
+
+    window.addEventListener("focus", () => paused = false);
+
+    window.addEventListener("blur", () => paused = true);
 
 }
 </script>
