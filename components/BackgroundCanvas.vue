@@ -254,7 +254,6 @@ function start() {
     window.addEventListener("focus", () => paused = false);
 
     window.addEventListener("blur", () => paused = true);
-
 }
 </script>
 

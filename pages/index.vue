@@ -9,6 +9,8 @@
         <Experience class="snap-center snap-always" />
         <Skills class="snap-center snap-always" />
         <About class="snap-center snap-always" />
+
+        <ScrollButton />
     </main>
 </template>
 
