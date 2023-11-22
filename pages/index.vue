@@ -21,6 +21,7 @@ export default {
 </script>
 
 <script setup>
+import TopBar from "~/components/TopBar.vue";
 import Experience from "~/components/Experience.vue";
 import Skills from "~/components/Skills.vue";
 import About from "~/components/About.vue";
