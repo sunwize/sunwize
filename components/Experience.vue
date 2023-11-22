@@ -15,18 +15,10 @@
                 :key="index"
                 class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto"
             >
-                <article class="md:w-[650px] h-full mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
+                <article class="md:w-[650px] h-full overflow-auto mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
                     <div class="flex items-center justify-center mx-auto">
-                        <NuxtImg
+                        <div
                             v-motion
-                            provider="cloudinary"
-                            :src="experience.image"
-                            :alt="experience.company"
-                            fit="inside"
-                            width="200"
-                            height="100"
-                            background="transparent"
-                            quality="100"
                             :initial="{
                                 opacity: 0,
                                 x: -50
@@ -40,7 +32,30 @@
                                 }
                             }"
                             :delay="100"
-                        />
+                        >
+                            <NuxtImg
+                                provider="cloudinary"
+                                :src="experience.image"
+                                :alt="experience.company"
+                                fit="inside"
+                                width="200"
+                                height="100"
+                                background="transparent"
+                                quality="100"
+                                class="hidden md:block"
+                            />
+                            <NuxtImg
+                                provider="cloudinary"
+                                :src="experience.image"
+                                :alt="experience.company"
+                                fit="inside"
+                                width="150"
+                                height="75"
+                                background="transparent"
+                                quality="100"
+                                class="md:hidden"
+                            />
+                        </div>
                     </div>
                     <h3 class="text-xl">
                         {{ experience.title }}

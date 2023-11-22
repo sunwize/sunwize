@@ -1,5 +1,5 @@
 <template>
-    <main class="h-screen overflow-y-auto snap-y snap-mandatory relative scroll-smooth">
+    <main class="h-screen overflow-y-auto snap-y snap-mandatory relative scroll-smooth leading-snug">
         <TopBar />
         <Hero
             class="snap-center snap-always"
