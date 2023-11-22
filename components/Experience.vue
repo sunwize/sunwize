@@ -65,10 +65,10 @@
                         </li>
                     </ul>
                     <p class="text-sm font-light uppercase opacity-50 tracking-wide mb-3">
-                        {{ format(experience.date_start, "LLL yyyy") }} - {{ format(experience.date_end, "LLL yyyy") }}
+                        {{ experience.date_start }} - {{ experience.date_end }}
                     </p>
                     <ul
-                        class="list-disc text-xs sm:text-sm flex flex-col gap-2 pl-3 md:pl-0"
+                        class="text-xs sm:text-sm flex flex-col gap-4 pl-3 md:pl-0"
                         v-html="experience.description"
                     />
                 </article>
@@ -101,32 +101,60 @@ export default {
 <script setup>
 import { format } from "date-fns";
 
+const formatDate = (date) => format(date, "LLL yyyy");
+
 const experiences = ref([
     {
         image: "/experiences/paper.png",
         company: "Paper Education",
-        title: "Front End Developer",
+        title: "Full Stack Developer",
         description: `
-            <li>As a front end developer, I participated in creating a tutoring platform that lets student ask professional tutors to review their writings 24/7.</li>
-            <li>Developed a Chrome extension to extend the use of the platform to a simple browser plugin.</li>
-            <li>Worked on a game where students can create a city by resolving math problems.</li>
+            <li>
+                <p class="badge">📚 Review center</p>
+                <p>A platform that lets students upload essays and submit them for reviews.</p>
+            </li>
+            <li>
+                <p class="badge">📐 Math missions</p>
+                <p>A set of math exercises that students can use to assess their math skills.</p>
+            </li>
+            <li>
+                <p class="badge">👩‍🏫 Practice center</p>
+                <p>A "Math missions" expansion for other subjects like ELA.</p>
+            </li>
+            <li>
+                <p class="badge">🌎 Content localization</p>
+                <p>A database architecture to enable server side content localization.</p>
+            </li>
+            <li>
+                <p class="badge">👩‍🔧 Content management system</p>
+                <p>A back office tool to let teachers build on demand learning content for students.</p>
+            </li>
         `,
-        stack: ["vuejs", "javascript", "postgresql"],
-        date_start: new Date("01/04/2022"),
-        date_end: new Date(),
+        stack: ["vuejs", "reactjs", "javascript", "typescript", "postgresql", "strapi"],
+        date_start: formatDate(new Date("01/04/2022")),
+        date_end: "Now",
     },
     {
         image: "/experiences/eyeinmedia.png",
         company: "Eyein Media",
         title: "Software Engineer",
         description: `
-            <li>Worked on both the front end and the backend of an ecosystem for restaurants, combining a food ordering app (web and mobile), a personalized website for menu display, and a system for managing orders and reserving tables.</li>
-            <li>As a full-stack developer, made a web/mobile application that allows people to avoid waiting in line at stores during the first lockdown.</li>
-            <li>Developed a web/mobile application providing a system for scheduling appointments between people isolated in long-term care homes and their families.</li>
+            <li>
+                <p class="badge">🦸‍♂️ Food Force</p>
+                <p>A comprehensive platform encompassing food ordering apps (web and mobile), customized menu display websites, and order management/reservation systems.</p>
+            </li>
+            <li>
+                <p class="badge">🛍️ Reserve&Shop</p>
+                <p>A web/mobile application that enabled users to skip waiting in store lines during the initial lockdown.</p>
+            </li>
+            <li>
+                <p class="badge">👴 OneGeneration</p>
+                <p>A web/mobile application facilitating appointment scheduling between isolated individuals in long-term care homes and their families.</p>
+            </li>
         `,
-        stack: ["vuejs", "nuxtjs", "javascript", "capacitor", "mongodb"],
-        date_start: new Date("01/03/2020"),
-        date_end: new Date("01/03/2022"),
+        stack: ["vuejs", "nuxtjs", "javascript", "capacitor", "postgresql", "mongodb"],
+        date_start: formatDate(new Date("01/03/2020")),
+        date_end: formatDate(new Date("01/03/2022")),
     },
 ]);
 
@@ -147,9 +175,19 @@ const stack = ref([
         title: "Nuxt.js",
     },
     {
+        key: "reactjs",
+        image: "/stack/reactjs.png",
+        title: "React.js",
+    },
+    {
         key: "javascript",
         image: "/stack/javascript.png",
         title: "Javascript",
+    },
+    {
+        key: "typescript",
+        image: "/stack/typescript.png",
+        title: "Typescript",
     },
     {
         key: "postgresql",
@@ -166,29 +204,36 @@ const stack = ref([
         image: "/stack/capacitor.png",
         title: "Capacitor",
     },
+    {
+        key: "strapi",
+        image: "/stack/strapi.png",
+        title: "Strapi",
+    },
 ]);
 
 const scrollContainer = ref();
 
-function previous() {
+const previous = () => {
     scrollContainer.value.scrollBy({
         left: -100,
         behavior: "smooth",
     });
-}
+};
 
-function next() {
+const next = () => {
     scrollContainer.value.scrollBy({
         left: 200,
         behavior: "smooth",
     });
-}
+};
 
-function getStack(key) {
+const getStack = (key) => {
     return stack.value.find((s) => s.key === key);
-}
+};
 </script>
 
-<style lang="scss" scoped>
-
+<style lang="scss">
+.badge {
+    @apply inline-block w-auto bg-white/10 rounded-2xl text-base font-medium tracking-wide mb-2 px-3 py-1;
+}
 </style>
