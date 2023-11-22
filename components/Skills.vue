@@ -58,11 +58,6 @@ const skills = ref([
         title: "Vue.js",
     },
     {
-        key: "nuxtjs",
-        image: "/stack/nuxtjs.png",
-        title: "Nuxt.js",
-    },
-    {
         key: "reactjs",
         image: "/stack/reactjs.png",
         title: "React.js",
@@ -111,6 +106,11 @@ const skills = ref([
         key: "firebase",
         image: "/stack/firebase.png",
         title: "Firebase",
+    },
+    {
+        key: "strapi",
+        image: "/stack/strapi.png",
+        title: "Strapi",
     },
 ]);
 </script>
