@@ -8,7 +8,7 @@
         </h2>
         <ul
             ref="scrollContainer"
-            class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory md:px-10 py-16"
+            class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory pt-2 md:px-10 md:py-16"
         >
             <li
                 v-for="(experience, index) in experiences"
@@ -83,7 +83,7 @@
                         {{ experience.date_start }} - {{ experience.date_end }}
                     </p>
                     <ul
-                        class="text-xs sm:text-sm flex flex-col gap-4 pl-3 md:pl-0"
+                        class="text-sm flex flex-col gap-4"
                         v-html="experience.description"
                     />
                 </article>
@@ -91,14 +91,14 @@
         </ul>
 
         <button
-            class="z-[1] absolute left-3 sm:left-10 top-24 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
+            class="z-[1] absolute left-3 sm:left-10 top-28 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
             aria-label="Previous experience"
             @click.stop="previous()"
         >
             <mdicon name="arrow-left" />
         </button>
         <button
-            class="z-[1] absolute right-3 sm:right-10 top-24 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
+            class="z-[1] absolute right-3 sm:right-10 top-28 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
             aria-label="Next experience"
             @click.stop="next()"
         >
