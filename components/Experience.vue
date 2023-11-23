@@ -8,7 +8,7 @@
         </h2>
         <ul
             ref="scrollContainer"
-            class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory pt-2 md:px-10 md:py-16"
+            class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory py-4 md:px-10 md:py-16"
         >
             <li
                 v-for="(experience, index) in experiences"
