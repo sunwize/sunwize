@@ -60,7 +60,7 @@ function generateMeta({ title, description, image, url }) {
 }
 
 useHead({
-    title: "Colin Clisson | Front End Developer",
+    title: "Colin Clisson | Full Stack Developer",
     htmlAttrs: {
         lang: "en",
     },
@@ -73,7 +73,7 @@ useHead({
         {
             hid: "keywords",
             name: "keywords",
-            content: "Front end, Web, Developer, Engineer, Vue, Nuxt, React",
+            content: "Full stack, Web, Developer, Engineer, Vue, Nuxt, React",
         },
         {
             hid: "viewport",
@@ -82,8 +82,8 @@ useHead({
         },
         // Social media
         ...generateMeta({
-            title: "Colin Clisson | Front End Developer",
-            description: "As a front end developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
+            title: "Colin Clisson | Full Stack Developer",
+            description: "As a full stack developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
             image: "https://res.cloudinary.com/dh0ymuppr/image/upload/v1672608952/portfolio/avatar.jpg",
             url: "https://colinclisson.com",
         }),
@@ -98,7 +98,7 @@ useHead({
                     "@type": "Person",
                     "name": "Colin Clisson",
                 },
-                "description": "As a front end developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
+                "description": "As a full stack developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.",
             }),
             type: "application/ld+json",
         },

@@ -18,7 +18,7 @@
                 />
             </figure>
             <h1 class="uppercase tracking-[5px] opacity-70 text-xs mb-2">
-                Front end Developer
+                Full Stack Developer
             </h1>
             <p class="font-bold text-2xl sm:text-3xl mb-5">
                 <span
@@ -38,9 +38,10 @@
                     v-for="(section, index) in sections"
                     :key="index"
                     class="cursor-pointer opacity-70 hover:underline hover:opacity-100"
-                    @click.stop="emit('scroll-to', section.id)"
                 >
-                    {{ section.name }}
+                    <a :href="`#${section.id}`">
+                        {{ section.name }}
+                    </a>
                 </li>
             </ul>
         </article>

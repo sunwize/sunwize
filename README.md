@@ -1,12 +1,12 @@
 # 👋 Hey there! I'm Colin.
 ***
 
-Passionate front end developer. Mostly working with Vue and Nuxt applications. Interested in the rise of AI.
+Passionate full stack developer. Mostly working with Vue and Nuxt applications. Interested in the rise of AI.
 
 ## 👨🏻‍💻 About me
 - 🔍 Exploring new technologies and developing software solutions and quick hacks.
 - 🎓 Graduate in France, Software engineer.
-- 🌱 Learning more about Front end technologies, Systems Design and Artificial Intelligence.
+- 🌱 Learning more about Web Technologies, Systems Design and Artificial Intelligence.
 
 ## 🛠️ Tech Stack
 - 🌐 <img src="https://img.shields.io/badge/-Vue.js-4FC08D?logo=vue.js&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-Nuxt.js-00C58E?logo=nuxt.js&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-Node.js-339933?logo=node.js&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-Capacitor-3880FF?logo=ionic&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat&logo=TypeScript&logoColor=white"> <img src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=flat"> <img src="https://img.shields.io/badge/-CSS3-1572B6?logo=css3&logoColor=white&style=flat">

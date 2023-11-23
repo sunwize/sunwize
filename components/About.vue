@@ -14,7 +14,7 @@
                 Hey! My name is Colin. 👋
             </p>
             <p>
-                I'm a web developer specialized in front end.
+                I'm a full stack web developer.
                 What drives me the most is to discover and take advantage of the new possibilities and opportunities that the web is giving us.
                 That's why I carefully keep myself informed about this constantly evolving world.
             </p>
@@ -23,7 +23,7 @@
                 I value rigor and quality in my productions and believe that teamwork is key to learning and success.
             </p>
             <p>
-                If you are looking for a dedicated and ambitious front end developer, you have come to the right place.
+                If you are looking for a dedicated and ambitious full stack developer, you have come to the right place.
                 I look forward to the opportunity to work with you and create something amazing together! 🚀
             </p>
         </div>
