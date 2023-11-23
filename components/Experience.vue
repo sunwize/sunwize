@@ -142,7 +142,7 @@ const experiences = ref([
             </li>
             <li>
                 <p class="badge">👩‍🔧 Content management system</p>
-                <p>A back office tool to let teachers build on demand learning content for students.</p>
+                <p>A back office tool to let teachers build learning content for students on demand.</p>
             </li>
         `,
         stack: ["vuejs", "reactjs", "javascript", "typescript", "postgresql", "strapi"],
@@ -230,14 +230,14 @@ const scrollContainer = ref();
 
 const previous = () => {
     scrollContainer.value.scrollBy({
-        left: -100,
+        left: -500,
         behavior: "smooth",
     });
 };
 
 const next = () => {
     scrollContainer.value.scrollBy({
-        left: 200,
+        left: 500,
         behavior: "smooth",
     });
 };

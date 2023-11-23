@@ -128,7 +128,7 @@ const scrollContainer = ref();
 
 function previous() {
     scrollContainer.value.scrollBy({
-        left: -100,
+        left: -200,
         behavior: "smooth",
     });
 }
