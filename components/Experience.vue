@@ -15,7 +15,7 @@
                 :key="index"
                 class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto"
             >
-                <article class="md:w-[650px] h-full overflow-auto mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
+                <article class="md:w-[650px] h-full overflow-auto scrollbar-hidden mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
                     <div class="flex items-center justify-center mx-auto">
                         <div
                             v-motion
@@ -83,7 +83,7 @@
                         {{ experience.date_start }} - {{ experience.date_end }}
                     </p>
                     <ul
-                        class="text-sm flex flex-col gap-4"
+                        class="text-xs sm:text-sm flex flex-col gap-4"
                         v-html="experience.description"
                     />
                 </article>
@@ -91,14 +91,14 @@
         </ul>
 
         <button
-            class="z-[1] absolute left-3 sm:left-10 top-28 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
+            class="z-[1] absolute left-3 sm:left-10 top-12 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
             aria-label="Previous experience"
             @click.stop="previous()"
         >
             <mdicon name="arrow-left" />
         </button>
         <button
-            class="z-[1] absolute right-3 sm:right-10 top-28 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
+            class="z-[1] absolute right-3 sm:right-10 top-12 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
             aria-label="Next experience"
             @click.stop="next()"
         >
@@ -249,6 +249,6 @@ const getStack = (key) => {
 
 <style lang="scss">
 .badge {
-    @apply inline-block w-auto bg-white/10 rounded-2xl text-base font-medium tracking-wide mb-2 px-3 py-1;
+    @apply inline-block w-auto bg-white/10 rounded-2xl text-sm sm:text-base font-medium tracking-wide mb-2 px-3 py-1;
 }
 </style>

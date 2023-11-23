@@ -1,5 +1,5 @@
 <template>
-    <div class="fixed z-[1] left-1/2 bottom-5 md:bottom-10 -translate-x-1/2">
+    <div class="hidden md:block fixed z-[1] left-1/2 bottom-5 md:bottom-10 -translate-x-1/2">
         <button
             v-if="visible"
             class="bg-gray-700/50 rounded-full text-white/50 hover:text-white p-1"

@@ -1,5 +1,5 @@
 <template>
-    <main class="h-screen overflow-y-auto snap-y snap-mandatory relative scroll-smooth leading-snug">
+    <main class="h-screen overflow-y-auto md:snap-y md:snap-mandatory relative scroll-smooth leading-snug">
         <TopBar />
         <Hero
             class="snap-center snap-always"
@@ -25,6 +25,7 @@ import TopBar from "~/components/TopBar.vue";
 import Experience from "~/components/Experience.vue";
 import Skills from "~/components/Skills.vue";
 import About from "~/components/About.vue";
+import ScrollButton from "~/components/ScrollButton.vue";
 
 function scrollTo(id) {
     const element = document.querySelector(`#${id}`);
