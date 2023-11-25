@@ -14,18 +14,14 @@
     </main>
 </template>
 
-<script>
-export default {
-    name: "Index",
-};
-</script>
-
 <script setup>
 import TopBar from "~/components/TopBar.vue";
-import Experience from "~/components/Experience.vue";
-import Skills from "~/components/Skills.vue";
-import About from "~/components/About.vue";
 import ScrollButton from "~/components/ScrollButton.vue";
+import Hero from "~/components/sections/Hero.vue";
+import Projects from "~/components/sections/Projects.vue";
+import Experience from "~/components/sections/Experience.vue";
+import Skills from "~/components/sections/Skills.vue";
+import About from "~/components/sections/About.vue";
 
 function scrollTo(id) {
     const element = document.querySelector(`#${id}`);

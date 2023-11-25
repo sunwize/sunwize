@@ -114,10 +114,6 @@ export default {
 </script>
 
 <script setup>
-import { format } from "date-fns";
-
-const formatDate = (date) => format(date, "LLL yyyy");
-
 const experiences = ref([
     {
         image: "/experiences/paper.png",
@@ -146,8 +142,8 @@ const experiences = ref([
             </li>
         `,
         stack: ["vuejs", "reactjs", "javascript", "typescript", "postgresql", "strapi"],
-        date_start: formatDate(new Date("01/04/2022")),
-        date_end: "Now",
+        date_start: "JAN 2022",
+        date_end: "Present",
     },
     {
         image: "/experiences/eyeinmedia.png",
@@ -168,8 +164,8 @@ const experiences = ref([
             </li>
         `,
         stack: ["vuejs", "nuxtjs", "javascript", "capacitor", "postgresql", "mongodb"],
-        date_start: formatDate(new Date("01/03/2020")),
-        date_end: formatDate(new Date("01/03/2022")),
+        date_start: "JAN 2020",
+        date_end: "JAN 2022",
     },
 ]);
 
