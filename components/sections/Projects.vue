@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { projectsFixtures } from 'assets/fixtures/projects';
+
+const projects = ref(projectsFixtures);
+const scrollContainer = ref();
+
+const previous = () => {
+  scrollContainer.value.scrollBy({
+    left: -200,
+    behavior: 'smooth',
+  });
+};
+
+const next = () => {
+  scrollContainer.value.scrollBy({
+    left: 200,
+    behavior: 'smooth',
+  });
+};
+</script>
+
 <template>
     <section
         id="projects"
@@ -90,56 +111,6 @@
         </button>
     </section>
 </template>
-
-<script>
-export default {
-    name: "Projects",
-};
-</script>
-
-<script setup>
-const projects = ref([
-    {
-        name: "PAPER Education",
-        description: `
-            Educative platform to provide unlimited access to trained tutors so students can ask questions, work through problems and get their writings reviewed 24/7.
-        `,
-        image: "/projects/paper.png",
-        link: "https://paper.co",
-    },
-    {
-        name: "The Food Force",
-        description: `
-            A place to share what meals, snacks, desserts and refreshments you liked and from where, so that others can also Discover them.
-        `,
-        image: "/projects/thefoodforce.png",
-        link: "https://thefoodforce.com",
-    },
-    {
-        name: "Confetti",
-        description: `
-            A loyalty program for Place Rosemère shopping mall. Clients get to scan their purchase receipts to collect confetti points and win amazing prizes.
-        `,
-        image: "/projects/confetti.png",
-        link: "https://confetti.placerosemere.com",
-    },
-]);
-const scrollContainer = ref();
-
-function previous() {
-    scrollContainer.value.scrollBy({
-        left: -200,
-        behavior: "smooth",
-    });
-}
-
-function next() {
-    scrollContainer.value.scrollBy({
-        left: 200,
-        behavior: "smooth",
-    });
-}
-</script>
 
 <style lang="scss" scoped>
 @keyframes test {

@@ -1,3 +1,9 @@
+<script setup>
+import { skillsFixtures } from 'assets/fixtures/skills';
+
+const skills = ref(skillsFixtures);
+</script>
+
 <template>
     <section
         id="skills"
@@ -29,7 +35,7 @@
                 <NuxtImg
                     provider="cloudinary"
                     :src="skill.image"
-                    :alt="skill.title"
+                    :alt="`${skill.title} logo`"
                     class="min-w-[80%] max-w-[80%] aspect-square object-contain"
                     width="100"
                     height="100"
@@ -43,77 +49,6 @@
         </ul>
     </section>
 </template>
-
-<script>
-export default {
-    name: "Skills",
-};
-</script>
-
-<script setup>
-const skills = ref([
-    {
-        key: "vuejs",
-        image: "/stack/vuejs.png",
-        title: "Vue.js",
-    },
-    {
-        key: "reactjs",
-        image: "/stack/reactjs.png",
-        title: "React.js",
-    },
-    {
-        key: "sveltejs",
-        image: "/stack/sveltejs.png",
-        title: "Svelte.js",
-    },
-    {
-        key: "tailwindcss",
-        image: "/stack/tailwind.png",
-        title: "Tailwind",
-    },
-    {
-        key: "nodejs",
-        image: "/stack/nodejs.png",
-        title: "Node.js",
-    },
-    {
-        key: "mysql",
-        image: "/stack/mysql.png",
-        title: "MySQL",
-    },
-    {
-        key: "postgresql",
-        image: "/stack/postgresql.png",
-        title: "Postgres",
-    },
-    {
-        key: "mongodb",
-        image: "/stack/mongodb.png",
-        title: "MongoDB",
-    },
-    {
-        key: "capacitor",
-        image: "/stack/capacitor.png",
-        title: "Capacitor",
-    },
-    {
-        key: "jest",
-        image: "/stack/jest.png",
-        title: "Jest",
-    },
-    {
-        key: "firebase",
-        image: "/stack/firebase.png",
-        title: "Firebase",
-    },
-    {
-        key: "strapi",
-        image: "/stack/strapi.png",
-        title: "Strapi",
-    },
-]);
-</script>
 
 <style lang="scss" scoped>
 .skills {

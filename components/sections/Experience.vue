@@ -1,3 +1,30 @@
+<script setup lang="ts">
+import { experiencesFixtures } from 'assets/fixtures/experiences';
+import { stackFixtures } from 'assets/fixtures/stack';
+
+const experiences = ref(experiencesFixtures);
+const stack = ref(stackFixtures);
+const scrollContainer = ref<HTMLElement>();
+
+const previous = () => {
+  scrollContainer.value?.scrollBy({
+    left: -500,
+    behavior: 'smooth',
+  });
+};
+
+const next = () => {
+  scrollContainer.value?.scrollBy({
+    left: 500,
+    behavior: 'smooth',
+  });
+};
+
+const getStack = (key: string) => {
+  return stack.value.find((s) => s.key === key)!;
+};
+</script>
+
 <template>
     <section
         id="experience"
@@ -106,142 +133,6 @@
         </button>
     </section>
 </template>
-
-<script>
-export default {
-    name: "Experience",
-};
-</script>
-
-<script setup>
-const experiences = ref([
-    {
-        image: "/experiences/paper.png",
-        company: "Paper Education",
-        title: "Full Stack Developer",
-        description: `
-            <li>
-                <p class="badge">📚 Review center</p>
-                <p>A platform that lets students upload essays and submit them for reviews.</p>
-            </li>
-            <li>
-                <p class="badge">📐 Math missions</p>
-                <p>A set of math exercises that students can use to assess their math skills.</p>
-            </li>
-            <li>
-                <p class="badge">👩‍🏫 Practice center</p>
-                <p>A "Math missions" expansion for other subjects like ELA.</p>
-            </li>
-            <li>
-                <p class="badge">🌎 Content localization</p>
-                <p>A database architecture to enable server side content localization.</p>
-            </li>
-            <li>
-                <p class="badge">👩‍🔧 Content management system</p>
-                <p>A back office tool to let teachers build learning content for students on demand.</p>
-            </li>
-        `,
-        stack: ["vuejs", "reactjs", "javascript", "typescript", "postgresql", "strapi"],
-        date_start: "JAN 2022",
-        date_end: "Present",
-    },
-    {
-        image: "/experiences/eyeinmedia.png",
-        company: "Eyein Media",
-        title: "Software Engineer",
-        description: `
-            <li>
-                <p class="badge">🦸‍♂️ Food Force</p>
-                <p>A comprehensive platform encompassing food ordering apps (web and mobile), customized menu display websites, and order management/reservation systems.</p>
-            </li>
-            <li>
-                <p class="badge">🛍️ Reserve&Shop</p>
-                <p>A web/mobile application that enabled users to skip waiting in store lines during the initial lockdown.</p>
-            </li>
-            <li>
-                <p class="badge">👴 OneGeneration</p>
-                <p>A web/mobile application facilitating appointment scheduling between isolated individuals in long-term care homes and their families.</p>
-            </li>
-        `,
-        stack: ["vuejs", "nuxtjs", "javascript", "capacitor", "postgresql", "mongodb"],
-        date_start: "JAN 2020",
-        date_end: "JAN 2022",
-    },
-]);
-
-const stack = ref([
-    {
-        key: "nodejs",
-        image: "/stack/nodejs.png",
-        title: "Node.js",
-    },
-    {
-        key: "vuejs",
-        image: "/stack/vuejs.png",
-        title: "Vue.js",
-    },
-    {
-        key: "nuxtjs",
-        image: "/stack/nuxtjs.png",
-        title: "Nuxt.js",
-    },
-    {
-        key: "reactjs",
-        image: "/stack/reactjs.png",
-        title: "React.js",
-    },
-    {
-        key: "javascript",
-        image: "/stack/javascript.png",
-        title: "Javascript",
-    },
-    {
-        key: "typescript",
-        image: "/stack/typescript.png",
-        title: "Typescript",
-    },
-    {
-        key: "postgresql",
-        image: "/stack/postgresql.png",
-        title: "Postgres",
-    },
-    {
-        key: "mongodb",
-        image: "/stack/mongodb.png",
-        title: "MongoDB",
-    },
-    {
-        key: "capacitor",
-        image: "/stack/capacitor.png",
-        title: "Capacitor",
-    },
-    {
-        key: "strapi",
-        image: "/stack/strapi.png",
-        title: "Strapi",
-    },
-]);
-
-const scrollContainer = ref();
-
-const previous = () => {
-    scrollContainer.value.scrollBy({
-        left: -500,
-        behavior: "smooth",
-    });
-};
-
-const next = () => {
-    scrollContainer.value.scrollBy({
-        left: 500,
-        behavior: "smooth",
-    });
-};
-
-const getStack = (key) => {
-    return stack.value.find((s) => s.key === key);
-};
-</script>
 
 <style lang="scss">
 .badge {

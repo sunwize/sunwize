@@ -1,3 +1,31 @@
+<script setup lang="ts">
+import BackgroundCanvas from '~/components/BackgroundCanvas.vue';
+import { useTypingText } from '~/composables/useTypingText';
+
+const typing = ref();
+
+const sections = ref([
+  {
+    name: 'Projects',
+    id: '#projects',
+  },
+  {
+    name: 'Experience',
+    id: '#experience',
+  },
+  {
+    name: 'Skills',
+    id: '#skills',
+  },
+  {
+    name: 'About',
+    id: '#about',
+  },
+]);
+
+const { loaded } = useTypingText(typing);
+</script>
+
 <template>
     <section class="h-screen relative flex items-center justify-center overflow-x-hidden">
         <BackgroundCanvas class="absolute top-0 left-0 w-full h-full" />
@@ -9,7 +37,7 @@
                 <NuxtImg
                     provider="cloudinary"
                     src="/avatar.jpg"
-                    alt="avatar"
+                    alt="Colin Clisson"
                     quality="100"
                     class="rounded-full"
                     :draggable="false"
@@ -39,7 +67,7 @@
                     :key="index"
                     class="cursor-pointer opacity-70 hover:underline hover:opacity-100"
                 >
-                    <a :href="`#${section.id}`">
+                    <a :href="section.id">
                         {{ section.name }}
                     </a>
                 </li>
@@ -47,41 +75,6 @@
         </article>
     </section>
 </template>
-
-<script>
-export default {
-    name: "Hero",
-};
-</script>
-
-<script setup>
-import { useTypingText } from "~/composables/useTypingText";
-
-const emit = defineEmits(["scroll-to"]);
-
-const typing = ref();
-
-const sections = ref([
-    {
-        name: "Projects",
-        id: "projects",
-    },
-    {
-        name: "Experience",
-        id: "experience",
-    },
-    {
-        name: "Skills",
-        id: "skills",
-    },
-    {
-        name: "About",
-        id: "about",
-    },
-]);
-
-const { loaded } = useTypingText(typing);
-</script>
 
 <style lang="scss" scoped>
 @keyframes pulse {

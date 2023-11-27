@@ -1,8 +1,44 @@
+<script setup lang="ts">
+import { useScroll } from '@vueuse/core';
+
+const TIMEOUT = 2000;
+const LAST_PAGE = 4;
+
+const animating = ref(false);
+const page = ref(0);
+const visible = computed(() => animating.value && page.value < LAST_PAGE);
+
+const onClick = () => {
+  const scrollContainer = document.querySelector('main');
+  scrollContainer?.scrollBy(0, 100);
+  animating.value = false;
+
+  if (page.value < LAST_PAGE) {
+    setTimeout(() => {
+      animating.value = true;
+    }, TIMEOUT);
+  }
+};
+
+onMounted(() => {
+  const { y } = useScroll(document.querySelector('main'));
+
+  watch(y, (val: number) => {
+    page.value = Math.round(val / window.innerHeight);
+  });
+
+  setTimeout(() => {
+    animating.value = true;
+  }, TIMEOUT);
+});
+</script>
+
 <template>
     <div class="hidden md:block fixed z-[1] left-1/2 bottom-5 md:bottom-10 -translate-x-1/2">
         <button
             v-if="visible"
             class="bg-gray-700/50 rounded-full text-white/50 hover:text-white p-1"
+            aria-label="Next section"
             @click.stop="onClick"
         >
             <mdicon
@@ -13,47 +49,6 @@
         </button>
     </div>
 </template>
-
-<script>
-export default {
-    name: "ScrollButton",
-};
-</script>
-
-<script setup>
-import { useScroll } from "@vueuse/core";
-
-const TIMEOUT = 2000;
-const LAST_PAGE = 4;
-
-const animating = ref(false);
-const page = ref(0);
-const visible = computed(() => animating.value && page.value < LAST_PAGE);
-
-function onClick() {
-    const scrollContainer = document.querySelector("main");
-    scrollContainer.scrollBy(0, 100);
-    animating.value = false;
-
-    if (page.value < LAST_PAGE) {
-        setTimeout(() => {
-            animating.value = true;
-        }, TIMEOUT);
-    }
-}
-
-onMounted(() => {
-    const { y } = useScroll(document.querySelector("main"));
-
-    watch(y, (val) => {
-        page.value = Math.round(val / window.innerHeight);
-    });
-
-    setTimeout(() => {
-        animating.value = true;
-    }, TIMEOUT);
-});
-</script>
 
 <style lang="scss" scoped>
 @keyframes fade-in {

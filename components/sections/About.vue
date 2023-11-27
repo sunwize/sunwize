@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import { useTypingParagraph } from '~/composables/useTypingParagraph';
+
+const content = ref();
+
+useTypingParagraph(content, {
+  delayBetweenLetters: 10,
+});
+</script>
+
 <template>
     <section
         id="about"
@@ -29,23 +39,3 @@
         </div>
     </section>
 </template>
-
-<script>
-export default {
-    name: "About",
-};
-</script>
-
-<script setup>
-import useTypingParagraph from "~/composables/useTypingParagraph.js";
-
-const content = ref();
-
-useTypingParagraph(content, {
-    delayBetweenLetters: 10,
-});
-</script>
-
-<style scoped>
-
-</style>

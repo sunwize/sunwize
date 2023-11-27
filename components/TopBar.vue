@@ -1,3 +1,34 @@
+<script setup>
+import { useScroll } from '@vueuse/core';
+
+const links = ref([
+  {
+    title: 'Github',
+    icon: 'github',
+    href: 'https://github.com/sunwize',
+  },
+  {
+    title: 'LinkedIn',
+    icon: 'linkedin',
+    href: 'https://www.linkedin.com/in/colin-clisson-6b675b142',
+  },
+  {
+    title: 'Email',
+    icon: 'at',
+    href: 'mailto:colinclissonhg@gmail.com',
+  },
+]);
+const classList = ref('');
+
+onMounted(() => {
+  const { y } = useScroll(ref(document.querySelector('main')));
+
+  watch(y, (value) => {
+    classList.value = value > 200 ? 'bg-background' : '';
+  });
+});
+</script>
+
 <template>
     <nav
         class="fixed z-10 top-0 left-0 w-full"
@@ -22,7 +53,10 @@
             <li class="ml-auto">
                 <a
                     href="/resume.pdf"
-                    class="text-sm border border-white/50 hover:border-white hover:bg-white/10 active:bg-white/20 flex items-center gap-1 rounded-3xl px-4 py-1"
+                    class="
+                        text-sm border border-white/50 flex items-center gap-1 rounded-3xl px-4 py-1
+                        hover:border-white hover:bg-white/10 active:bg-white/20
+                    "
                 >
                     <mdicon name="cloud-download" />
                     My resume
@@ -31,43 +65,6 @@
         </ul>
     </nav>
 </template>
-
-<script>
-export default {
-    name: "TopBar",
-};
-</script>
-
-<script setup>
-import { useScroll } from "@vueuse/core";
-
-const links = ref([
-    {
-        title: "Github",
-        icon: "github",
-        href: "https://github.com/sunwize",
-    },
-    {
-        title: "LinkedIn",
-        icon: "linkedin",
-        href: "https://www.linkedin.com/in/colin-clisson-6b675b142",
-    },
-    {
-        title: "Email",
-        icon: "at",
-        href: "mailto:colinclissonhg@gmail.com",
-    },
-]);
-const classList = ref("");
-
-onMounted(() => {
-    const { y } = useScroll(ref(document.querySelector("main")));
-
-    watch(y, (value) => {
-        classList.value = value > 200 ? "bg-background" : "";
-    });
-});
-</script>
 
 <style lang="scss" scoped>
 nav {

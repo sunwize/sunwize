@@ -1,29 +1,33 @@
 {
+  "name": "nuxt-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint:fix": "eslint --fix"
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image-edge": "^1.0.0-27840416.dc1ed65",
-    "@nuxtjs/google-fonts": "^3.0.0-0",
-    "@nuxtjs/tailwindcss": "^6.2.0",
-    "autoprefixer": "^10.4.13",
-    "eslint": "^8.30.0",
-    "eslint-plugin-nuxt": "^4.0.0",
-    "nuxt": "3.0.0",
-    "postcss": "^8.4.20",
-    "sass": "^1.57.1",
-    "sass-loader": "^10.4.1",
-    "tailwindcss": "^3.2.4"
+    "@nuxt/devtools": "latest",
+    "@nuxt/eslint-config": "^0.2.0",
+    "@nuxtjs/google-fonts": "^3.1.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.54.0",
+    "nuxt": "^3.8.2",
+    "postcss": "^8.4.31",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.3.2",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5",
+    "vue-tsc": "^1.8.22"
   },
   "dependencies": {
-    "@mdi/js": "^7.1.96",
-    "@vueuse/core": "^9.9.0",
-    "@vueuse/motion": "^2.0.0-beta.25",
+    "@mdi/js": "^7.3.67",
+    "@nuxt/image": "^1.1.0",
+    "@vueuse/motion": "^2.0.0",
     "mdi-vue": "^3.0.13",
     "vue-gtag": "^2.0.1"
   }
