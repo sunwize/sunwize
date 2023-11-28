@@ -1,21 +1,33 @@
 <script setup lang="ts">
 import { experiencesFixtures } from 'assets/fixtures/experiences';
 import { stackFixtures } from 'assets/fixtures/stack';
+import Card from '~/components/ui/Card.vue';
+import Pagination from '~/components/ui/Pagination.vue';
+import { useScroller } from '~/composables/useScroller';
 
 const experiences = ref(experiencesFixtures);
 const stack = ref(stackFixtures);
-const scrollContainer = ref<HTMLElement>();
+const experienceScroll = ref<HTMLElement>();
 
-const previous = () => {
-  scrollContainer.value?.scrollBy({
-    left: -500,
+const {
+  index: experienceIndex,
+  scrollToIndex: scrollToExperience,
+} = useScroller(experienceScroll);
+
+const getProjectScrollId = (index: number) => `experience-projects-${index}`;
+
+const previousProject = () => {
+  const element = document.querySelector(`#${getProjectScrollId(experienceIndex.value)}`)!;
+  element.scrollBy({
+    left: -200,
     behavior: 'smooth',
   });
 };
 
-const next = () => {
-  scrollContainer.value?.scrollBy({
-    left: 500,
+const nextProject = () => {
+  const element = document.querySelector(`#${getProjectScrollId(experienceIndex.value)}`)!;
+  element.scrollBy({
+    left: 200,
     behavior: 'smooth',
   });
 };
@@ -30,112 +42,136 @@ const getStack = (key: string) => {
         id="experience"
         class="h-screen relative flex flex-col pt-16"
     >
-        <h2 class="text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="text-center uppercase opacity-50 tracking-[10px] mb-4 md:mb-16">
             Experience
         </h2>
+
+        <Pagination
+            v-model="experienceIndex"
+            :max="experiences.length"
+            class="mb-2 md:mb-4"
+            @update:model-value="scrollToExperience"
+        />
         <ul
-            ref="scrollContainer"
-            class="scrollbar-hidden flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory py-4 md:px-10 md:py-16"
+            ref="experienceScroll"
+            class="scrollbar-hidden scroll-smooth flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory pb-4 px-1 md:px-10 md:pb-16"
         >
             <li
                 v-for="(experience, index) in experiences"
                 :key="index"
-                class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto"
+                class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto flex justify-center"
             >
-                <article class="md:w-[650px] h-full overflow-auto scrollbar-hidden mx-auto bg-gray-700/20 rounded-lg p-5 md:p-10">
-                    <div class="flex items-center justify-center mx-auto">
-                        <div
-                            v-motion
-                            :initial="{
-                                opacity: 0,
-                                x: -50
-                            }"
-                            :visible="{
-                                opacity: 1,
-                                x: 0,
-                                transition: {
-                                    stiffness: 50,
-                                    mass: 0.5
-                                }
-                            }"
-                            :delay="100"
-                        >
-                            <NuxtImg
-                                provider="cloudinary"
-                                :src="experience.image"
-                                :alt="experience.company"
-                                fit="inside"
-                                width="200"
-                                height="100"
-                                background="transparent"
-                                quality="100"
-                                class="hidden md:block"
-                            />
-                            <NuxtImg
-                                provider="cloudinary"
-                                :src="experience.image"
-                                :alt="experience.company"
-                                fit="inside"
-                                width="150"
-                                height="75"
-                                background="transparent"
-                                quality="100"
-                                class="md:hidden"
-                            />
+                <Card class="flex flex-col h-full flex-1 w-full max-w-[750px]">
+                    <div class="flex justify-between mb-4 sm:mb-0">
+                        <div>
+                            <h3 class="text-2xl sm:text-3xl font-light">
+                                {{ experience.title }}
+                            </h3>
+                            <p class="text-lg sm:text-xl font-bold">
+                                {{ experience.company }}
+                            </p>
+                            <p class="block sm:hidden font-light opacity-70 uppercase tracking-wide">
+                                {{ experience.date_start }} - {{ experience.date_end }}
+                            </p>
                         </div>
+                        <NuxtImg
+                            :src="experience.image"
+                            :alt="experience.company"
+                            provider="cloudinary"
+                            width="150"
+                            height="75"
+                            fit="inside"
+                            quality="100"
+                            class="hidden sm:block"
+                        />
                     </div>
-                    <h3 class="text-xl">
-                        {{ experience.title }}
-                    </h3>
-                    <h4 class="text-sm font-bold mb-3">
-                        {{ experience.company }}
-                    </h4>
-                    <ul class="flex items-center gap-3 mb-8">
-                        <li
-                            v-for="(key, i) in experience.stack"
-                            :key="i"
-                            :title="getStack(key).title"
+                    <div class="flex justify-between">
+                        <ul class="flex items-center gap-3">
+                            <li
+                                v-for="(key, i) in experience.stack"
+                                :key="i"
+                                :title="getStack(key).title"
+                            >
+                                <NuxtImg
+                                    provider="cloudinary"
+                                    :src="getStack(key).image"
+                                    :alt="getStack(key).title"
+                                    fit="inside"
+                                    width="25"
+                                    height="25"
+                                />
+                            </li>
+                        </ul>
+                        <p class="hidden sm:block font-light opacity-70 uppercase tracking-wide">
+                            {{ experience.date_start }} - {{ experience.date_end }}
+                        </p>
+                    </div>
+
+                    <div class="flex items-center my-8">
+                        <hr class="flex-1 opacity-30">
+                        <div class="flex items-center gap-3 mx-2">
+                            <button
+                                class="flex items-center justify-center hover:bg-white/10 active:bg-white/30 rounded-full p-1"
+                                aria-label="Previous project"
+                                @click.stop="previousProject()"
+                            >
+                                <mdicon
+                                    name="chevron-left"
+                                    width="25"
+                                    height="25"
+                                />
+                            </button>
+                            <p class="text-lg font-bold uppercase tracking-widest opacity-50">
+                                Projects
+                            </p>
+                            <button
+                                class="flex items-center justify-center hover:bg-white/10 active:bg-white/30 rounded-full p-1"
+                                aria-label="Next project"
+                                @click.stop="nextProject()"
+                            >
+                                <mdicon
+                                    name="chevron-right"
+                                    width="25"
+                                    height="25"
+                                />
+                            </button>
+                        </div>
+                        <hr class="flex-1 opacity-30">
+                    </div>
+
+                    <div class="flex-1">
+                        <ul
+                            :id="getProjectScrollId(index)"
+                            class="z-[1] scrollbar-hidden w-full h-full overflow-x-auto flex flex-nowrap gap-28 snap-x snap-mandatory flex-1"
                         >
-                            <NuxtImg
-                                provider="cloudinary"
-                                :src="getStack(key).image"
-                                :alt="getStack(key).title"
-                                fit="inside"
-                                width="25"
-                                height="25"
-                            />
-                        </li>
-                    </ul>
-                    <p class="text-sm font-light uppercase opacity-50 tracking-wide mb-3">
-                        {{ experience.date_start }} - {{ experience.date_end }}
-                    </p>
-                    <ul
-                        class="text-xs sm:text-sm flex flex-col gap-4"
-                        v-html="experience.description"
-                    />
-                </article>
+                            <li
+                                v-for="(project, projectIndex) in experience.projects"
+                                :key="projectIndex"
+                                class="flex sm:gap-3 h-full min-w-full snap-center snap-always"
+                            >
+                                <div class="flex-[2]">
+                                    <h4 class="text-xl font-bold tracking-wide inline-block bg-white/10 rounded-3xl py-2 px-3 mb-3">
+                                        {{ project.title }}
+                                    </h4>
+                                    <p class="text-lg">
+                                        {{ project.description }}
+                                    </p>
+                                </div>
+                                <div v-if="project.image">
+                                    <NuxtImg
+                                        provider="cloudinary"
+                                        :src="project.image"
+                                        :alt="project.title"
+                                        fit="inside"
+                                        width="250"
+                                        class="hidden sm:block"
+                                    />
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </Card>
             </li>
         </ul>
-
-        <button
-            class="z-[1] absolute left-3 sm:left-10 top-12 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
-            aria-label="Previous experience"
-            @click.stop="previous()"
-        >
-            <mdicon name="arrow-left" />
-        </button>
-        <button
-            class="z-[1] absolute right-3 sm:right-10 top-12 md:top-1/2 md:-translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
-            aria-label="Next experience"
-            @click.stop="next()"
-        >
-            <mdicon name="arrow-right" />
-        </button>
     </section>
 </template>
-
-<style lang="scss">
-.badge {
-    @apply inline-block w-auto bg-white/10 rounded-2xl text-sm sm:text-base font-medium tracking-wide mb-2 px-3 py-1;
-}
-</style>

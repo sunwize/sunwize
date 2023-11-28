@@ -32,7 +32,12 @@ export const stackFixtures = [
   {
     key: 'postgresql',
     image: '/stack/postgresql.png',
-    title: 'Postgres',
+    title: 'PostgreSQL',
+  },
+  {
+    key: 'graphql',
+    image: '/stack/graphql.png',
+    title: 'GraphQL',
   },
   {
     key: 'mongodb',
