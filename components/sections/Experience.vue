@@ -4,6 +4,7 @@ import { stackFixtures } from 'assets/fixtures/stack';
 import Card from '~/components/ui/Card.vue';
 import Pagination from '~/components/ui/Pagination.vue';
 import { useScroller } from '~/composables/useScroller';
+import ZoomImage from '~/components/ui/ZoomImage.vue';
 
 const experiences = ref(experiencesFixtures);
 const stack = ref(stackFixtures);
@@ -74,14 +75,11 @@ const getStack = (key: string) => {
                                 {{ experience.date_start }} - {{ experience.date_end }}
                             </p>
                         </div>
-                        <NuxtImg
+                        <ZoomImage
                             :src="experience.image"
                             :alt="experience.company"
-                            provider="cloudinary"
                             width="150"
                             height="75"
-                            fit="inside"
-                            quality="100"
                             class="hidden sm:block"
                         />
                     </div>
@@ -158,13 +156,11 @@ const getStack = (key: string) => {
                                     </p>
                                 </div>
                                 <div v-if="project.image">
-                                    <NuxtImg
-                                        provider="cloudinary"
+                                    <ZoomImage
                                         :src="project.image"
                                         :alt="project.title"
-                                        fit="inside"
                                         width="250"
-                                        class="hidden sm:block"
+                                        class="hidden sm:block rounded-2xl overflow-hidden"
                                     />
                                 </div>
                             </li>
