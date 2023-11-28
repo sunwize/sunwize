@@ -75,11 +75,14 @@ const getStack = (key: string) => {
                                 {{ experience.date_start }} - {{ experience.date_end }}
                             </p>
                         </div>
-                        <ZoomImage
+                        <NuxtImg
                             :src="experience.image"
                             :alt="experience.company"
+                            provider="cloudinary"
                             width="150"
                             height="75"
+                            quality="100"
+                            fit="inside"
                             class="hidden sm:block"
                         />
                     </div>
