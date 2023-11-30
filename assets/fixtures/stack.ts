@@ -15,6 +15,11 @@ export const stackFixtures = [
     title: 'Nuxt.js',
   },
   {
+    key: 'sveltejs',
+    image: '/stack/sveltejs.png',
+    title: 'Svelte.js',
+  },
+  {
     key: 'reactjs',
     image: '/stack/reactjs.png',
     title: 'React.js',
