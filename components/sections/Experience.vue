@@ -60,7 +60,7 @@ const getStack = (key: string) => {
             <li
                 v-for="(experience, index) in experiences"
                 :key="index"
-                class="flex-1 min-w-full h-full snap-center snap-always overflow-y-auto flex justify-center"
+                class="flex-1 min-w-full h-full snap-center snap-always overflow-visible flex justify-center"
             >
                 <Card class="flex flex-col h-full flex-1 w-full max-w-[750px]">
                     <div class="flex justify-between mb-4 sm:mb-0">
@@ -140,7 +140,7 @@ const getStack = (key: string) => {
                         <hr class="flex-1 opacity-30">
                     </div>
 
-                    <div class="flex-1">
+                    <div class="flex-1 overflow-y-auto">
                         <ul
                             :id="getProjectScrollId(index)"
                             class="z-[1] scrollbar-hidden w-full h-full overflow-x-auto flex flex-nowrap gap-28 snap-x snap-mandatory flex-1"
