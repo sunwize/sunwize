@@ -44,6 +44,7 @@ const visible = ref(false);
             :fit="fit"
             :quality="quality"
             :draggable="false"
+            class="w-full"
         />
         <button
             class="absolute top-0 left-0 w-full h-full bg-black/50 opacity-0 hover:opacity-100 flex items-center justify-center cursor-pointer"
@@ -59,20 +60,21 @@ const visible = ref(false);
         <Teleport to="body">
             <button
                 v-if="visible"
-                class="fixed z-20 top-0 left-0 w-full h-full bg-black/80 flex items-center justify-center cursor-pointer"
+                class="fixed z-20 top-0 left-0 w-full h-full bg-black/80 flex justify-center cursor-pointer overflow-y-auto"
                 @click.stop="visible = false"
             >
                 <NuxtImg
                     :src="src"
                     :alt="alt"
                     :provider="provider"
-                    width="600"
+                    width="1000"
                     :fit="fit"
                     :quality="quality"
-                    class="cursor-default"
+                    preload
+                    class="cursor-default my-auto"
                     @click.stop
                 />
-                <button class="absolute top-3 right-3 opacity-50 hover:opacity-100">
+                <button class="fixed top-3 right-5 opacity-50 hover:opacity-100">
                     <mdicon
                         name="close"
                         width="35"
