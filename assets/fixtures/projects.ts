@@ -1,26 +1,36 @@
 export const projectsFixtures = [
   {
-    name: 'PAPER Education',
+    title: 'Flex',
     description: `
-        Educative platform to provide unlimited access to trained tutors so students can ask questions, work through problems and get their writings reviewed 24/7.
+      My very own portable Netflix sanctuary, where I can indulge in my top-tier movie favorites no matter where I roam!
+      It's like having a cinema-on-the-go, just a tad more exclusive.
     `,
-    image: '/projects/paper.png',
-    link: 'https://paper.co',
+    image: '/projects/flex_2.png',
+    website: 'https://flex-svelte.vercel.app',
+    github: 'https://github.com/sunwize/flex-svelte',
+    stack: ['sveltejs', 'typescript'],
   },
   {
-    name: 'The Food Force',
+    title: 'Mood music',
     description: `
-        A place to share what meals, snacks, desserts and refreshments you liked and from where, so that others can also Discover them.
+      Say farewell to the frustration of the music suddenly coming to a halt!
+      Now, let the tunes serenade you endlessly, adapting to your ever-changing musical whims.
+      Your playlist, your rules, and the party never has to end!
     `,
-    image: '/projects/thefoodforce.png',
-    link: 'https://thefoodforce.com',
+    image: '/projects/mood_music.png',
+    website: 'https://mood-music-six.vercel.app',
+    github: 'https://github.com/sunwize/mood-music',
+    stack: ['sveltejs', 'typescript'],
   },
   {
-    name: 'Confetti',
+    title: 'Movie swipe',
     description: `
-        A loyalty program for Place Rosemère shopping mall. Clients get to scan their purchase receipts to collect confetti points and win amazing prizes.
+      If you ever find yourself in a cinematic standoff with your significant other, just play the swipe game with movies until you both hit the jackpot!
+      Movie night just got a whole lot more entertaining.
     `,
-    image: '/projects/confetti.png',
-    link: 'https://confetti.placerosemere.com',
+    image: '/projects/movie_swipe.png',
+    website: 'https://movie-swipe.vercel.app',
+    github: 'https://github.com/sunwize/movie-swipe',
+    stack: ['reactjs', 'typescript'],
   },
 ];

@@ -1,21 +1,20 @@
 <script setup lang="ts">
 import { projectsFixtures } from 'assets/fixtures/projects';
+import { stackFixtures } from 'assets/fixtures/stack';
+import Card from '~/components/ui/Card.vue';
+import ZoomImage from '~/components/ui/ZoomImage.vue';
+import Pagination from '~/components/ui/Pagination.vue';
 
 const projects = ref(projectsFixtures);
-const scrollContainer = ref();
+const projectScroll = ref<HTMLElement>();
 
-const previous = () => {
-  scrollContainer.value.scrollBy({
-    left: -200,
-    behavior: 'smooth',
-  });
-};
+const {
+  index: projectIndex,
+  scrollToIndex: scrollToProject,
+} = useScroller(projectScroll);
 
-const next = () => {
-  scrollContainer.value.scrollBy({
-    left: 200,
-    behavior: 'smooth',
-  });
+const getStack = (key: string) => {
+  return stackFixtures.find((s) => s.key === key)!;
 };
 </script>
 
@@ -25,90 +24,89 @@ const next = () => {
         class="relative h-screen flex flex-col pt-16"
     >
         <div class="w-full absolute top-[25%] bg-gray-700/20 left-0 h-[60%] -skew-y-[6deg]" />
-        <h2 class="z-[1] text-center uppercase opacity-50 tracking-[10px]">
+        <h2 class="z-[1] text-center uppercase opacity-50 tracking-[10px] mb-4 md:mb-16">
             Projects
         </h2>
+
+        <Pagination
+            v-model="projectIndex"
+            :max="projects.length"
+            class="mb-2 md:mb-4"
+            @update:model-value="scrollToProject"
+        />
         <ul
-            ref="scrollContainer"
-            class="z-[1] scrollbar-hidden w-full overflow-x-auto flex flex-nowrap gap-28 sm:gap-0 snap-x snap-mandatory flex-1"
+            ref="projectScroll"
+            class="z-[1] scrollbar-hidden w-full overflow-x-auto scroll-smooth flex flex-nowrap gap-10 snap-x snap-mandatory flex-1 pb-1 px-1 md:px-10 md:pb-16"
         >
             <li
                 v-for="(project, index) in projects"
                 :key="index"
-                class="min-w-full snap-center snap-always"
+                class="min-w-full h-full snap-center snap-always flex justify-center"
             >
-                <article class="h-full flex flex-col items-center justify-center">
-                    <div
-                        v-motion
-                        class="relative mb-8"
-                        :initial="{
-                            opacity: 0,
-                            y: -50
-                        }"
-                        :visible="{
-                            opacity: 1,
-                            y: 0,
-                            transition: {
-                                stiffness: 50,
-                                mass: 0.5
-                            }
-                        }"
-                        :delay="100"
-                    >
-                        <NuxtImg
-                            provider="cloudinary"
-                            :src="project.image"
-                            :alt="project.name"
-                            class="absolute top-2 left-1/2 -translate-x-1/2 object-cover"
-                            width="190"
-                            height="118"
-                            :draggable="false"
-                        />
-                        <NuxtImg
-                            provider="cloudinary"
-                            src="/screen.png"
-                            alt="Screen"
-                            width="250"
-                            height="144"
-                            class="z-[1] relative block"
-                            :draggable="false"
-                        />
-                    </div>
-                    <a
-                        :href="project.link"
-                        target="_blank"
-                        rel="noreferrer"
-                        :aria-label="project.name"
-                        :title="project.name"
-                        class="flex items-center gap-1 hover:underline mb-5"
-                    >
-                        <h3 class="font-medium text-xl flex items-center gap-1">{{ project.name }}</h3>
-                        <mdicon
-                            name="open-in-new"
-                            class="opacity-50"
-                        />
-                    </a>
-                    <p class="w-full max-w-[650px] text-sm text-left px-3">
-                        {{ project.description }}
-                    </p>
-                </article>
+                <Card class="flex flex-col h-full flex-1 w-full max-w-[650px]">
+                    <ZoomImage
+                        :alt="project.title"
+                        :src="project.image"
+                        fit="cover"
+                        class="shrink-0 rounded-lg overflow-hidden"
+                    />
+                    <main class="flex flex-col h-full pt-3 sm:pt-5 md:pt-8 overflow-hidden mb-3">
+                        <h3 class="text-3xl font-bold mb-3">
+                            {{ project.title }}
+                        </h3>
+                        <p class="opacity-70 flex-1 overflow-y-auto">
+                            {{ project.description }}
+                        </p>
+                    </main>
+                    <footer class="flex items-center justify-between shrink-0 gap-3 mt-auto">
+                        <ul class="flex items-center gap-3">
+                            <li
+                                v-for="(key, i) in project.stack"
+                                :key="i"
+                            >
+                                <NuxtImg
+                                    provider="cloudinary"
+                                    :src="getStack(key).image"
+                                    :alt="getStack(key).title"
+                                    :title="getStack(key).title"
+                                    fit="inside"
+                                    width="30"
+                                    height="30"
+                                />
+                            </li>
+                        </ul>
+                        <ul class="flex items-center gap-3">
+                            <li>
+                                <a
+                                    :href="project.github"
+                                    target="_blank"
+                                    class="opacity-50 hover:opacity-100"
+                                >
+                                    <mdicon
+                                        name="github"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    :href="project.website"
+                                    target="_blank"
+                                    class="opacity-50 hover:opacity-100"
+                                >
+                                    <mdicon
+                                        name="earth"
+                                        width="30"
+                                        height="30"
+                                    />
+                                </a>
+                            </li>
+                        </ul>
+                    </footer>
+                </Card>
             </li>
         </ul>
-
-        <button
-            class="z-[1] absolute left-3 sm:left-10 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
-            aria-label="Previous project"
-            @click.stop="previous()"
-        >
-            <mdicon name="arrow-left" />
-        </button>
-        <button
-            class="z-[1] absolute right-3 sm:right-10 top-1/2 -translate-y-1/2 opacity-50 hover:opacity-100 hover:bg-white/5 active:bg-white/10 rounded-full p-3"
-            aria-label="Next project"
-            @click.stop="next()"
-        >
-            <mdicon name="arrow-right" />
-        </button>
     </section>
 </template>
 
