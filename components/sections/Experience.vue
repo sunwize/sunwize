@@ -7,7 +7,6 @@ import { useScroller } from '~/composables/useScroller';
 import ZoomImage from '~/components/ui/ZoomImage.vue';
 
 const experiences = ref(experiencesFixtures);
-const stack = ref(stackFixtures);
 const experienceScroll = ref<HTMLElement>();
 
 const {
@@ -34,7 +33,7 @@ const nextProject = () => {
 };
 
 const getStack = (key: string) => {
-  return stack.value.find((s) => s.key === key)!;
+  return stackFixtures.find((s) => s.key === key)!;
 };
 </script>
 
@@ -55,7 +54,7 @@ const getStack = (key: string) => {
         />
         <ul
             ref="experienceScroll"
-            class="scrollbar-hidden scroll-smooth flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory pb-4 px-1 md:px-10 md:pb-16"
+            class="scrollbar-hidden scroll-smooth flex flex-nowrap gap-10 w-full flex-1 overflow-x-auto snap-x snap-mandatory pb-1 px-1 md:px-10 md:pb-16"
         >
             <li
                 v-for="(experience, index) in experiences"
@@ -97,6 +96,7 @@ const getStack = (key: string) => {
                                     provider="cloudinary"
                                     :src="getStack(key).image"
                                     :alt="getStack(key).title"
+                                    :title="getStack(key).title"
                                     fit="inside"
                                     width="25"
                                     height="25"
