@@ -59,4 +59,9 @@ export const stackFixtures = [
     image: '/stack/strapi.png',
     title: 'Strapi',
   },
+  {
+    key: 'supabase',
+    image: '/stack/supabase.png',
+    title: 'Supabase',
+  },
 ];

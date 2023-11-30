@@ -8,7 +8,7 @@ export const projectsFixtures = [
     image: '/projects/flex_2.png',
     website: 'https://flex-svelte.vercel.app',
     github: 'https://github.com/sunwize/flex-svelte',
-    stack: ['sveltejs', 'typescript'],
+    stack: ['sveltejs', 'typescript', 'mongodb'],
   },
   {
     title: 'Mood music',
@@ -31,6 +31,6 @@ export const projectsFixtures = [
     image: '/projects/movie_swipe.png',
     website: 'https://movie-swipe.vercel.app',
     github: 'https://github.com/sunwize/movie-swipe',
-    stack: ['reactjs', 'typescript'],
+    stack: ['reactjs', 'typescript', 'supabase'],
   },
 ];
