@@ -1,7 +1,7 @@
 # 👋 Hey there! I'm Colin.
 ***
 
-Passionate full stack developer. Mostly working with Vue and Nuxt applications. Interested in the rise of AI.
+Experienced software engineer with 5+ years of experience in developing scalable, user-centric software solutions. Proven track record in enhancing digital platforms, boosting user engagement, and operating in cross-functional teams in a variety of settings, from start-ups to major corporations.
 
 ## 👨🏻‍💻 About me
 - 🔍 Exploring new technologies and developing software solutions and quick hacks.

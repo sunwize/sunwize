@@ -58,7 +58,7 @@ const generateMeta = (
 };
 
 useHead({
-  title: 'Colin Clisson | Full Stack Developer',
+  title: 'Colin Clisson | Software Engineer',
   htmlAttrs: {
     lang: 'en',
   },
@@ -80,8 +80,8 @@ useHead({
     },
     // Social media
     ...generateMeta({
-      title: 'Colin Clisson | Full Stack Developer',
-      description: 'As a full stack developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.',
+      title: 'Colin Clisson | Software Engineer',
+      description: 'As a software engineer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.',
       image: 'https://res.cloudinary.com/dh0ymuppr/image/upload/v1672608952/portfolio/avatar.jpg',
       url: 'https://colinclisson.com',
     }),
@@ -96,7 +96,7 @@ useHead({
           '@type': 'Person',
           name: 'Colin Clisson',
         },
-        description: 'As a full stack developer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.',
+        description: 'As a software engineer, I create interactive and user-friendly web applications using HTML, CSS, and JavaScript.',
       }),
       type: 'application/ld+json',
     },

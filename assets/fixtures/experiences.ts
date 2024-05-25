@@ -2,7 +2,7 @@ export const experiencesFixtures = [
   {
     image: '/experiences/paper.png',
     company: 'Paper Education',
-    title: 'Full Stack Developer',
+    title: 'Software Engineer (Full Stack)',
     projects: [
       {
         title: '📚 Review center',
@@ -37,7 +37,7 @@ export const experiencesFixtures = [
   {
     image: '/experiences/eyeinmedia.png',
     company: 'Eyein Media',
-    title: 'Software Engineer',
+    title: 'Software Engineer (Full Stack)',
     projects: [
       {
         title: '🦸‍♂️ Food Force',

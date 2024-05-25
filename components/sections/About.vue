@@ -33,7 +33,7 @@ useTypingParagraph(content, {
                 I value rigor and quality in my productions and believe that teamwork is key to learning and success.
             </p>
             <p>
-                If you are looking for a dedicated and ambitious full stack developer, you have come to the right place.
+                If you are looking for a dedicated and ambitious software engineer, you have come to the right place.
                 I look forward to the opportunity to work with you and create something amazing together! 🚀
             </p>
         </div>

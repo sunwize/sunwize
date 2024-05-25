@@ -46,7 +46,7 @@ const { loaded } = useTypingText(typing);
                 />
             </figure>
             <h1 class="uppercase tracking-[5px] opacity-70 text-xs mb-2">
-                Full Stack Developer
+                Software Engineer
             </h1>
             <p class="font-bold text-2xl sm:text-3xl mb-5">
                 <span
