@@ -58,7 +58,6 @@ onMounted(() => {
                         hover:border-white hover:bg-white/10 active:bg-white/20
                     "
                 >
-                    <mdicon name="cloud-download" />
                     My resume
                 </a>
             </li>
